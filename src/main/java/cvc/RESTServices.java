@@ -101,7 +101,7 @@ public class RESTServices
                         .build();
             }
 
-            File codeFile = new File(exampleDir, name + ".txt");
+            File codeFile = new File(exampleDir, name + ".smt2");
 
             VerificationInput input = new VerificationInput();
 
