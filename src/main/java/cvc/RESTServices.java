@@ -101,7 +101,7 @@ public class RESTServices
                         .build();
             }
 
-            File codeFile = new File(exampleDir, name + ".lus");
+            File codeFile = new File(exampleDir, name + ".txt");
 
             VerificationInput input = new VerificationInput();
 
