@@ -103,7 +103,7 @@ public class RESTServices
 
             File codeFile = new File(exampleDir, name + ".smt2");
 
-            VerificationInput input = new VerificationInput();
+            Input input = new Input();
 
             input.code = FileUtils.readFileToString(codeFile, Charset.defaultCharset());
 
@@ -153,27 +153,27 @@ public class RESTServices
     /**
      * Submits code for starting a new CvcContext job. A job ID for referencing the job created by this request will be returns.
      *
-     * @param verificationInput The request form sent by the client
+     * @param input The request form sent by the client
      * @return The job ID of this job as a string
      */
     @POST
     @Path("/run")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response verify(VerificationInput verificationInput)
+    public Response verify(Input input)
     {
         try
         {
-            if(verificationInput.jobId == null)
+            if(input.jobId == null)
             {
                 // create new job Id
-                verificationInput.jobId = Constants.tempPrefix + UUID.randomUUID().toString();
+                input.jobId = Constants.tempPrefix + UUID.randomUUID().toString();
             }
 
 
 
             List<String> args = new ArrayList<>();
-            for (Map.Entry<String, String> pair : verificationInput.arguments.entrySet())
+            for (Map.Entry<String, String> pair : input.arguments.entrySet())
             {
                 String key = pair.getKey();
                 if (Util.containsIgnoreCase(specialAttrs, key))
@@ -204,16 +204,16 @@ public class RESTServices
                 }
             }
 
-            Callable<Void> task = () -> CvcClient.createJob(verificationInput.jobId, verificationInput.code, args);
+            Callable<Void> task = () -> CvcClient.createJob(input.jobId, input.code, args);
 
             // asynchronously submit the task
             Future<Void> future = CvcContext.getCvcExecutorService().submit(task);
-            CvcContext.runningTasks.put(verificationInput.jobId, future);
+            CvcContext.runningTasks.put(input.jobId, future);
 
-            System.out.println("got this job ID = " + verificationInput.jobId);
+            System.out.println("got this job ID = " + input.jobId);
 
             JobInformation information = new JobInformation();
-            information.jobId = verificationInput.jobId;
+            information.jobId = input.jobId;
             return Response.ok().entity((information)).build();
         }
         catch (Exception e)

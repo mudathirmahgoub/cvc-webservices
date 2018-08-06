@@ -13,7 +13,7 @@
       "sygus"
     ],
     "description": "force input language",
-    "defaultValue": "auto"
+    "defaultValue": "smtlib2.6"
   },
   "output-lang": {
     "type": "string",

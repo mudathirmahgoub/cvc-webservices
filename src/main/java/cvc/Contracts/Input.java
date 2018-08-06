@@ -16,8 +16,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Map;
 
-@XmlRootElement(name = "VerificationInput")
-public class VerificationInput extends Job
+@XmlRootElement(name = "Input")
+public class Input extends Job
 {
     @XmlElement(name="arguments")
     public Map<String, String> arguments;
