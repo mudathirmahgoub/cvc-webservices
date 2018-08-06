@@ -1,0 +1,6 @@
+{
+	"cvcPath": "",
+	"jobsDirectory": "/var/lib/tomcat7/jobs",
+	"cvcCommand": "cvc4.exe {0}/{1}",
+	"maxThreads": "24"
+}

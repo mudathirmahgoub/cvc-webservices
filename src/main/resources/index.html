@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cvc Services</title>
+</head>
+<body>
+    <h2>Cvc Services</h2>
+    <div>This is the index page of the cvc server.
+        To verify it is working, please click on the test api link below.
+    </div>
+    <ul>
+        <li>
+            <div>RESTful api</div>
+            <ul style="list-style: none">
+                <li><a href="test">/test (GET)</a></li>
+                <li><a href="examples">/examples (GET)</a></li>
+                <li><a href="examples/Abs">/examples/Abs (GET)</a></li>
+                <li><a href="arguments">/arguments (GET)</a></li>
+                <li><div>/run (POST)</div></li>
+                <li><div>/getRawResults/{id} (GET)</div></li>
+                <li><div>/saveJob (POST)</div></li>
+                <li><div>/getJob/{id} (GET)</div></li>
+                <li><div>/cancelJob/{id} (GET)</div></li>
+            </ul>
+        </li>
+        <li>
+            <div>WebSocket</div>
+            <ul style="list-style: none">
+                <li><div>/getResults/{id} (GET)</div></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

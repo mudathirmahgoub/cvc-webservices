@@ -1,0 +1,37 @@
+{
+  "lang": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "auto",
+      "cvc4",
+      "smtlib1",
+      "smtlib2.0",
+      "smtlib2.5",
+      "smtlib2.6",
+      "tptp",
+      "sygus"
+    ],
+    "description": "force input language",
+    "defaultValue": "auto"
+  },
+  "output-lang": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "auto",
+      "cvc4",
+      "cvc3",
+      "smtlib1",
+      "smtlib2.0",
+      "smtlib2.5",
+      "smtlib2.6",
+      "tptp",
+      "z3str",
+      "ast"
+    ],
+    "description": "force output language",
+    "defaultValue": "auto"
+  }
+}
+
