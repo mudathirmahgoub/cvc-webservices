@@ -1,6 +1,6 @@
 {
 	"cvcPath": "",
 	"jobsDirectory": "jobs",
-	"cvcCommand": "cvc4.exe {0}/{1}",
+	"cvcCommand": "/usr/local/bin/cvc4 {0}/{1}",
 	"maxThreads": "24"
 }
