@@ -1,16 +1,14 @@
 ### Kind services
 
 
-1. Configure kind2 program and arguments in ```src/main/resources/configurations.json```
+1. Configure cvc program and arguments in ```src/main/resources/configurations.json```
 
-For kind2 docker in Windows
+For cvc in Windows
 ```json
 {
-	"kindPath": "",
+	"cvcPath": "",
 	"jobsDirectory": "jobs",
-	"kindCheckCommand": "docker run -v \"{0}\":/lus kind2/kind2:dev /lus/{1} -xml",
-	"kindMakeTableCommand": "docker run -v \"{0}\":/lus kind2/kind2:dev /lus/{1} --enable interpreter -xml",
-	"kindInterpretCommand": "docker run -v \"{0}\":/lus kind2/kind2:dev /lus/{1} --enable interpreter --interpreter_input_file /lus/{2} -xml",
+	"cvcCommand": "cvc4.exe {0}/{1}",
 	"maxThreads": "24"
 }
 ```
@@ -19,11 +17,9 @@ For milner server
 
 ```json
 {
-        "kindPath": "PATH=/usr/local/bin/",
-	"jobsDirectory": "/var/lib/tomcat7/jobs",
-	"kindCheckCommand": "/usr/local/bin/${kind2.binary} {0}/{1} -xml",
-	"kindMakeTableCommand": "/usr/local/bin/${kind2.binary} {0}/{1} --enable interpreter -xml",
-	"kindInterpretCommand": "/usr/local/bin/${kind2.binary} {0}/{1} --enable interpreter --interpreter_input_file {0}/{2} -xml",
+	"cvcPath": "",
+	"jobsDirectory": "jobs",
+	"cvcCommand": "/usr/local/bin/cvc4 {0}/{1}",
 	"maxThreads": "24"
 }
 ```
@@ -31,15 +27,15 @@ For milner server
 2. Install  [Maven](https://maven.apache.org/download.cgi).
    For Ubuntu you can run ```sudo apt-get install maven```
 3. Build the project using the command ```mvn package``` which will install 
-the dependencies in the pom.xml, build the artifacts, and prepare the web archive file ```target/kindservices.war```.
-4. Deploy ```kindservices.war``` file to the web container.  
+the dependencies in the pom.xml, build the artifacts, and prepare the web archive file ```target/cvcservices.war```.
+4. Deploy ```cvcservices.war``` file to the web container.  
 
 ## Deployment to milner server
- Milner server uses Apache Tomcat web container ```http://kind.cs.uiowa.edu:8080```
+ Milner server uses Apache Tomcat web container ```http://cvc.cs.uiowa.edu:8080```
  
- To deploy the ```kindservices.war``` file you can use Tomcat Web Application Manager
- ```http://kind.cs.uiowa.edu:8080/manager/html``` to upload the file. 
- Please note the old deployment ```/kindservices``` needs to be undeployed first 
+ To deploy the ```cvcservices.war``` file you can use Tomcat Web Application Manager
+ ```http://cvc.cs.uiowa.edu:8080/manager/html``` to upload the file. 
+ Please note the old deployment ```/cvcservices``` needs to be undeployed first 
  before any new deployment.
  
  ## Deployment to a local tomcat server
@@ -58,7 +54,7 @@ server and the admin web app.
 ``` 
 The tomcat server needs to be restarted ```systemctl restart tomcat8```
 
-3. The file ```kindservices.war``` could be uploaded using the manager page ```http://localhost:8080/manager```
-Please note the old deployment ```/kindservices``` needs to be undeployed first 
+3. The file ```cvcservices.war``` could be uploaded using the manager page ```http://localhost:8080/manager```
+Please note the old deployment ```/cvcservices``` needs to be undeployed first 
  before any new deployment.
  
