@@ -12,22 +12,19 @@
  */
 package cvc;
 
-import cvc.Contracts.*;
+import cvc.Contracts.RawResults;
 import org.apache.log4j.Logger;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import java.io.*;
-import java.lang.Runtime;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Formatter;
+import java.util.List;
 import java.util.concurrent.Future;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * @author Eric, Mingyu
@@ -56,47 +53,20 @@ public class CvcClient
 
     public static RawResults getRawResults(String jobId) throws Exception
     {
-        String filePath = CvcContext.jobsDirectory + "/" +
-                jobId +
-                "/" + Constants.RESULTS_FILE;
-        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        String resultsPath = CvcContext.jobsDirectory + "/" + jobId + "/" + Constants.RESULTS_FILE;
+        String errorsPath = CvcContext.jobsDirectory + "/" + jobId + "/" + Constants.ERRORS_FILE;
+
+        byte[] resultsBytes = Files.readAllBytes(Paths.get(resultsPath));
+        byte[] errorsBytes = Files.readAllBytes(Paths.get(errorsPath));
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(new String(resultsBytes, Charset.defaultCharset()));
+        builder.append(new String(errorsBytes, Charset.defaultCharset()));
 
         RawResults results = new RawResults();
-
-        results.data = new String(bytes, Charset.defaultCharset());
+        results.data = builder.toString();
 
         return results;
-    }
-
-    public static Object getObjectFromXmlElement(String element, Class<?> boundClass)
-    {
-        Object object = null;
-        try
-        {
-            JAXBContext jaxbContext = JAXBContext.newInstance(boundClass);
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            StringReader reader = new StringReader(element);
-            object = unmarshaller.unmarshal(reader);
-        }
-        catch (JAXBException e)
-        {
-            e.printStackTrace();
-        }
-        return object;
-    }
-
-    public static List<String> getElements(String data, String regex)
-    {
-        List<String> elements = new ArrayList<>();
-
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(data);
-
-        while (matcher.find())
-        {
-            elements.add(matcher.group());
-        }
-        return elements;
     }
 
     /**
@@ -112,6 +82,7 @@ public class CvcClient
 
         // create a file to store the results
         File resultsFile = new File(jobDir, Constants.RESULTS_FILE);
+        File errorsFile = new File(jobDir, Constants.ERRORS_FILE);
 
         String command = CvcContext.cvcCommand
                 .replace("{0}", jobDir.getAbsolutePath())
@@ -126,27 +97,29 @@ public class CvcClient
 
         try
         {
-            // delete the contents of the file if it exists
+            // delete the contents of the files if they exist
             if(resultsFile.exists())
             {
                 RandomAccessFile randomAccessFile = new RandomAccessFile(resultsFile,"rw");
                 randomAccessFile.setLength(0);
             }
 
-            Runtime runtime = Runtime.getRuntime();
-            Process process = runtime.exec(command, new String[] {CvcContext.cvcPath});
-
-            Scanner scanner = new Scanner(process.getInputStream());
-            while (scanner.hasNext())
+            if(errorsFile.exists())
             {
-                String line = scanner.nextLine();
-                FileWriter fileWriter = new FileWriter(resultsFile, true);
-                Formatter formatter = new Formatter(fileWriter);
-                formatter.format("%s\n", line);
-                formatter.close();
+                RandomAccessFile randomAccessFile = new RandomAccessFile(errorsFile,"rw");
+                randomAccessFile.setLength(0);
             }
+
+            Runtime runtime = Runtime.getRuntime();
+            runtime.exec(command, new String[] {CvcContext.cvcPath});
+
+            ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+            processBuilder.redirectOutput(resultsFile);
+            processBuilder.redirectError(errorsFile);
+            Process process = processBuilder.start();
+            process.waitFor();
         }
-        catch (IOException e)
+        catch (Exception e)
         {
             log.error("createJob says " + e.getMessage(), e);
             try

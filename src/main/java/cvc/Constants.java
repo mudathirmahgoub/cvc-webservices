@@ -24,5 +24,5 @@ public class Constants
     public static final String RESULTS_FILE = "results.txt";
     public static final String tempPrefix = "temp_";
     public static final String examplesDir = "examples";
-    public static final String jobsDir = "jobs";
+    public static final String ERRORS_FILE = "errors.txt" ;
 }
