@@ -32,6 +32,598 @@
     ],
     "description": "force output language",
     "defaultValue": "auto"
+  },
+  "verbose": {
+    "prefix": "--",
+    "description": "increase verbosity",
+    "defaultValue": ""
+  },
+  "quiet": {
+    "prefix": "--",
+    "description": "decrease verbosity",
+    "defaultValue": ""
+  },
+  "stats": {
+    "prefix": "--",
+    "description": "give statistics on exit [*]",
+    "defaultValue": ""
+  },
+  "no-stats": {
+    "prefix": "--",
+    "description": "do not give statistics on exit [*]",
+    "defaultValue": ""
+  },
+  "version": {
+    "prefix": "--",
+    "description": "identify this CVC4 binary",
+    "defaultValue": ""
+  },
+  "help": {
+    "prefix": "--",
+    "description": "full command line reference",
+    "defaultValue": ""
+  },
+  "show-config": {
+    "prefix": "--",
+    "description": "show CVC4 static configuration",
+    "defaultValue": ""
+  },
+  "copyright": {
+    "prefix": "--",
+    "description": "show CVC4 copyright information",
+    "defaultValue": ""
+  },
+  "seed": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "seed for random number generator",
+    "defaultValue": "0"
+  },
+  "strict-parsing": {
+    "prefix": "--",
+    "description": "be less tolerant of non-conforming inputs [*]",
+    "defaultValue": ""
+  },
+  "no-strict-parsing": {
+    "prefix": "--",
+    "description": "do not be less tolerant of non-conforming inputs [*]",
+    "defaultValue": ""
+  },
+  "dump": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "help",
+      "benchmark",
+      "declarations",
+      "raw-benchmark",
+      "skolems",
+      "assertions",
+      "clauses",
+      "state",
+      "t-conflicts",
+      "missed-t-conflicts",
+      "t-propagations",
+      "missed-t-propagations",
+      "t-lemmas",
+      "t-explanations",
+      "bv-rewrites",
+      "bv-abstraction",
+      "bv-algebraic",
+      "theory::fullcheck"
+    ],
+    "description": "",
+    "defaultValue": "help"
+  },
+  "produce-models": {
+    "prefix": "--",
+    "description": "support the get-value and get-model commands [*]",
+    "defaultValue": ""
+  },
+  "no-produce-models": {
+    "prefix": "--",
+    "description": "do not support the get-value and get-model commands [*]",
+    "defaultValue": ""
+  },
+  "produce-assertions": {
+    "prefix": "--",
+    "description": "keep an assertions list (enables get-assertions command) [*]",
+    "defaultValue": ""
+  },
+  "no-produce-assertions": {
+    "prefix": "--",
+    "description": "do not keep an assertions list (enables get-assertions command) [*]",
+    "defaultValue": ""
+  },
+  "incremental": {
+    "prefix": "--",
+    "description": "enable incremental solving [*]",
+    "defaultValue": ""
+  },
+  "no-incremental": {
+    "prefix": "--",
+    "description": "do not enable incremental solving [*]",
+    "defaultValue": ""
+  },
+  "tlimit": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "enable time limiting (give milliseconds)",
+    "defaultValue": "0"
+  },
+  "tlimit-per": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "enable time limiting per query (give milliseconds)",
+    "defaultValue": "0"
+  },
+  "rlimit": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "enable resource limiting (currently, roughly the number of SAT conflicts)",
+    "defaultValue": "0"
+  },
+  "rlimit-per": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "enable resource limiting per query",
+    "defaultValue": "0"
+  },
+  "hard-limit": {
+    "prefix": "--",
+    "description": "the resource limit is hard potentially leaving the smtEngine in an unsafe state (should be destroyed and rebuild after resourcing out) [*]",
+    "defaultValue": ""
+  },
+  "no-hard-limit": {
+    "prefix": "--",
+    "description": "the resource limit is not [*]",
+    "defaultValue": ""
+  },
+  "cpu-time": {
+    "prefix": "--",
+    "description": "measures CPU time [*]",
+    "defaultValue": ""
+  },
+  "no-cpu-time": {
+    "prefix": "--",
+    "description": "measures wall time [*]",
+    "defaultValue": ""
+  },
+  "unate-lemmas": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "none",
+      "ineqs",
+      "eqs",
+      "all"
+    ],
+    "description": "determines which lemmas to add before solving (default is 'all', see --unate-lemmas=help)",
+    "defaultValue": "all"
+  },
+  "unate-lemmas=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "arith-prop": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "none",
+      "unate",
+      "bi",
+      "both"
+    ],
+    "description": "turns on arithmetic propagation (see --arith-prop=help)",
+    "defaultValue": "none"
+  },
+  "arith-prop=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "heuristic-pivots": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "the number of times to apply the heuristic pivot rule; if N < 0, this defaults to the number of variables; if this is unset, this is tuned by the logic selection",
+    "defaultValue": "-1"
+  },
+  "standard-effort-variable-order-pivots": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "limits the number of pivots in a single invocation of check() at a non-full effort level using Bland's pivot rule (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "error-selection-rule": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "min",
+      "max",
+      "varord"
+    ],
+    "description": "change the pivot rule for the basic variable (default is 'min', see --pivot-rule help)",
+    "defaultValue": "min"
+  },
+  "error-selection-rule=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "simplex-check-period": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 65535,
+    "description": "the number of pivots to do in simplex before rechecking for a conflict on all variables",
+    "defaultValue": "0"
+  },
+  "pivot-threshold": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 65535,
+    "description": "sets the number of pivots using --pivot-rule per basic variable per simplex instance before using variable order",
+    "defaultValue": "0"
+  },
+  "prop-row-length": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 65535,
+    "description": "sets the maximum row length to be used in propagation",
+    "defaultValue": "0"
+  },
+  "enable-dio-solver": {
+    "prefix": "--",
+    "description": "turns on Linear Diophantine Equation solver (Griggio, JSAT 2012)",
+    "defaultValue": ""
+  },
+  "disable-dio-solver": {
+    "prefix": "--",
+    "description": "turns off Linear Diophantine Equation solver (Griggio, JSAT 2012)",
+    "defaultValue": ""
+  },
+  "enable-arith-rewrite-equalities": {
+    "prefix": "--",
+    "description": "turns on the preprocessing rewrite turning equalities into a conjunction of inequalities",
+    "defaultValue": ""
+  },
+  "disable-arith-rewrite-equalities": {
+    "prefix": "--",
+    "description": "turns off the preprocessing rewrite turning equalities into a conjunction of inequalities",
+    "defaultValue": ""
+  },
+  "enable-miplib-trick": {
+    "prefix": "--",
+    "description": "turns on the preprocessing step of attempting to infer bounds on miplib problems",
+    "defaultValue": ""
+  },
+  "disable-miplib-trick": {
+    "prefix": "--",
+    "description": "turns off the preprocessing step of attempting to infer bounds on miplib problems",
+    "defaultValue": ""
+  },
+  "miplib-trick-subs": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 4294967295,
+    "description": "do substitution for miplib 'tmp' vars if defined in <= N eliminated vars",
+    "defaultValue": "0"
+  },
+  "cut-all-bounded": {
+    "prefix": "--",
+    "description": "turns on the integer solving step of periodically cutting all integer variables that have both upper and lower bounds [*]",
+    "defaultValue": ""
+  },
+  "no-cut-all-bounded": {
+    "prefix": "--",
+    "description": "turns off the integer solving step of periodically cutting all integer variables that have both upper and lower bounds [*]",
+    "defaultValue": ""
+  },
+  "maxCutsInContext": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 4294967295,
+    "description": "maximum cuts in a given context before signalling a restart",
+    "defaultValue": "0"
+  },
+  "revert-arith-models-on-unsat": {
+    "prefix": "--",
+    "description": "revert the arithmetic model to a known safe model on unsat if one is cached [*]",
+    "defaultValue": ""
+  },
+  "no-revert-arith-models-on-unsat": {
+    "prefix": "--",
+    "description": "do not revert the arithmetic model to a known safe model on unsat if one is cached [*]",
+    "defaultValue": ""
+  },
+  "fc-penalties": {
+    "prefix": "--",
+    "description": "turns on degenerate pivot penalties [*]",
+    "defaultValue": ""
+  },
+  "no-fc-penalties": {
+    "prefix": "--",
+    "description": "turns off degenerate pivot penalties [*]",
+    "defaultValue": ""
+  },
+  "use-fcsimplex": {
+    "prefix": "--",
+    "description": "use focusing and converging simplex (FMCAD 2013 submission) [*]",
+    "defaultValue": ""
+  },
+  "no-use-fcsimplex": {
+    "prefix": "--",
+    "description": "do not use focusing and converging simplex (FMCAD 2013 submission) [*]",
+    "defaultValue": ""
+  },
+  "use-soi": {
+    "prefix": "--",
+    "description": "use sum of infeasibility simplex (FMCAD 2013 submission) [*]",
+    "defaultValue": ""
+  },
+  "no-use-soi": {
+    "prefix": "--",
+    "description": "do not use sum of infeasibility simplex (FMCAD 2013 submission) [*]",
+    "defaultValue": ""
+  },
+  "restrict-pivots": {
+    "prefix": "--",
+    "description": "have a pivot cap for simplex at effort levels below fullEffort [*]",
+    "defaultValue": ""
+  },
+  "no-restrict-pivots": {
+    "prefix": "--",
+    "description": "do not have a pivot cap for simplex at effort levels below fullEffort [*]",
+    "defaultValue": ""
+  },
+  "collect-pivot-stats": {
+    "prefix": "--",
+    "description": "collect the pivot history [*]",
+    "defaultValue": ""
+  },
+  "no-collect-pivot-stats": {
+    "prefix": "--",
+    "description": "do not collect the pivot history [*]",
+    "defaultValue": ""
+  },
+  "use-approx": {
+    "prefix": "--",
+    "description": "attempt to use an approximate solver [*]",
+    "defaultValue": ""
+  },
+  "no-use-approx": {
+    "prefix": "--",
+    "description": "do not attempt to use an approximate solver [*]",
+    "defaultValue": ""
+  },
+  "approx-branch-depth": {
+    "type": "int",
+    "prefix": "--",
+    "min": -32768,
+    "max": 32767,
+    "description": "maximum cuts in a given context before signalling a restart",
+    "defaultValue": "0"
+  },
+  "dio-decomps": {
+    "prefix": "--",
+    "description": "let skolem variables for integer divisibility constraints leak from the dio solver [*]",
+    "defaultValue": ""
+  },
+  "no-dio-decomps": {
+    "prefix": "--",
+    "description": "do not let skolem variables for integer divisibility constraints leak from the dio solver [*]",
+    "defaultValue": ""
+  },
+  "new-prop": {
+    "prefix": "--",
+    "description": "use the new row propagation system [*]",
+    "defaultValue": ""
+  },
+  "no-new-prop": {
+    "prefix": "--",
+    "description": "do not use the new row propagation system [*]",
+    "defaultValue": ""
+  },
+  "arith-prop-clauses": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 65535,
+    "description": "rows shorter than this are propagated as clauses",
+    "defaultValue": "0"
+  },
+  "soi-qe": {
+    "prefix": "--",
+    "description": "use quick explain to minimize the sum of infeasibility conflicts [*]",
+    "defaultValue": ""
+  },
+  "no-soi-qe": {
+    "prefix": "--",
+    "description": "do not use quick explain to minimize the sum of infeasibility conflicts [*]",
+    "defaultValue": ""
+  },
+  "rewrite-divk": {
+    "prefix": "--",
+    "description": "rewrite division and mod when by a constant into linear terms [*]",
+    "defaultValue": ""
+  },
+  "no-rewrite-divk": {
+    "prefix": "--",
+    "description": "do not rewrite division and mod when by a constant into linear terms [*]",
+    "defaultValue": ""
+  },
+  "se-solve-int": {
+    "prefix": "--",
+    "description": "attempt to use the approximate solve integer method on standard effort [*]",
+    "defaultValue": ""
+  },
+  "no-se-solve-int": {
+    "prefix": "--",
+    "description": "do not attempt to use the approximate solve integer method on standard effort [*]",
+    "defaultValue": ""
+  },
+  "lemmas-on-replay-failure": {
+    "prefix": "--",
+    "description": "attempt to use external lemmas if approximate solve integer failed [*]",
+    "defaultValue": ""
+  },
+  "no-lemmas-on-replay-failure": {
+    "prefix": "--",
+    "description": "do not attempt to use external lemmas if approximate solve integer failed [*]",
+    "defaultValue": ""
+  },
+  "dio-turns": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "turns in a row dio solver cutting gets",
+    "defaultValue": "0"
+  },
+  "rr-turns": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "round robin turns",
+    "defaultValue": "0"
+  },
+  "dio-repeat": {
+    "prefix": "--",
+    "description": "handle dio solver constraints in mass or one at a time [*]",
+    "defaultValue": ""
+  },
+  "no-dio-repeat": {
+    "prefix": "--",
+    "description": "do not handle dio solver constraints in mass or one at a time [*]",
+    "defaultValue": ""
+  },
+  "replay-early-close-depth": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "multiples of the depths to try to close the approx log eagerly",
+    "defaultValue": "0"
+  },
+  "replay-failure-penalty": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "number of solve integer attempts to skips after a numeric failure",
+    "defaultValue": "0"
+  },
+  "replay-num-err-penalty": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "number of solve integer attempts to skips after a numeric failure",
+    "defaultValue": "0"
+  },
+  "replay-reject-cut": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 4294967295,
+    "description": "maximum complexity of any coefficient while replaying cuts",
+    "defaultValue": "0"
+  },
+  "replay-lemma-reject-cut": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 4294967295,
+    "description": "maximum complexity of any coefficient while outputting replaying cut lemmas",
+    "defaultValue": "0"
+  },
+  "": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "no-": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "no-": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "no-": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "no-": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "no-": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+
+    ],
+    "description": "",
+    "defaultValue": ""
+  },
+  "": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+
+    ],
+    "description": "",
+    "defaultValue": ""
   }
 }
 
