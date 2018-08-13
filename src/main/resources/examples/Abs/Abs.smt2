@@ -1,7 +1,0 @@
-(set-logic ALL)
-(set-option :produce-models true)
-(declare-fun abs (Int) Int)
-(assert (forall ((x Int)) (=> (>= x 0) (= (abs x) x))))
-(assert (forall ((x Int)) (=> (< x 0) (= (abs x) (- x)))))
-(check-sat)
-(get-model)

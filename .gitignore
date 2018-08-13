@@ -24,3 +24,5 @@ target/
 .idea/
 *.iml
 nbactions.xml
+
+src/main/resources/configurations.json
