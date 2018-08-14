@@ -557,72 +557,4324 @@
     "description": "maximum complexity of any coefficient while outputting replaying cut lemmas",
     "defaultValue": "0"
   },
-  "": {
+  "replay-soi-major-threshold": {
+    "type": "int",
     "prefix": "--",
-    "description": "",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for a major tolerance failure by the approximate solver",
+    "defaultValue": "0"
+  },
+  "replay-soi-major-threshold-pen": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for a major tolerance failure by the approximate solver",
+    "defaultValue": "0"
+  },
+  "replay-soi-minor-threshold": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for a minor tolerance failure by the approximate solver",
+    "defaultValue": "0"
+  },
+  "replay-soi-minor-threshold-pen": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for a minor tolerance failure by the approximate solver",
+    "defaultValue": "0"
+  },
+  "pp-assert-max-sub-size": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for substituting an equality in ppAssert",
+    "defaultValue": "0"
+  },
+  "max-replay-tree": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold for attempting to replay a tree",
+    "defaultValue": "0"
+  },
+  "arith-no-partial-fun":{
+    "prefix": "--",
+    "description": "do not use partial function semantics for arithmetic (not SMT LIB compliant) [*]",
     "defaultValue": ""
   },
-  "no-": {
+
+  "no-arith-no-partial-fun":{
     "prefix": "--",
-    "description": "",
+    "description": "use partial function semantics for arithmetic (not SMT LIB compliant) [*]",
     "defaultValue": ""
   },
-  "": {
+
+  "pb-rewrites":{
     "prefix": "--",
-    "description": "",
+    "description": "apply pseudo boolean rewrites [*]",
     "defaultValue": ""
   },
-  "no-": {
+
+  "no-pb-rewrites":{
     "prefix": "--",
-    "description": "",
+    "description": "do not apply pseudo boolean rewrites [*]",
     "defaultValue": ""
   },
-  "": {
+
+  "pb-rewrite-threshold": {
+    "type": "int",
     "prefix": "--",
-    "description": "",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "threshold of number of pseudoboolean variables to have before doing rewrites",
+    "defaultValue": "0"
+  },
+  "snorm-infer-eq":{
+    "prefix": "--",
+    "description": "infer equalities based on Shostak normalization [*]",
     "defaultValue": ""
   },
-  "no-": {
+
+  "no-snorm-infer-eq":{
     "prefix": "--",
-    "description": "",
+    "description": "do not infer equalities based on Shostak normalization [*]",
     "defaultValue": ""
   },
-  "": {
+
+  "nl-ext":{
     "prefix": "--",
-    "description": "",
+    "description": "extended approach to non-linear [*]",
     "defaultValue": ""
   },
-  "no-": {
+
+  "no-nl-ext":{
     "prefix": "--",
-    "description": "",
+    "description": "do not extended approach to non-linear [*]",
     "defaultValue": ""
   },
-  "": {
+
+  "nl-ext-rbound":{
     "prefix": "--",
-    "description": "",
+    "description": "use resolution-style inference for inferring new bounds [*]",
     "defaultValue": ""
   },
-  "no-": {
+
+  "no-nl-ext-rbound":{
     "prefix": "--",
-    "description": "",
+    "description": "do not use resolution-style inference for inferring new bounds [*]",
     "defaultValue": ""
   },
-  "": {
+
+  "nl-ext-factor":{
+    "prefix": "--",
+    "description": "use factoring inference in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-factor":{
+    "prefix": "--",
+    "description": "do not use factoring inference in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-tplanes":{
+    "prefix": "--",
+    "description": "use non-terminating tangent plane strategy for non-linear [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-tplanes":{
+    "prefix": "--",
+    "description": "do not use non-terminating tangent plane strategy for non-linear [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-tf-tplanes":{
+    "prefix": "--",
+    "description": "use non-terminating tangent plane strategy for transcendental functions for non-linear [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-tf-tplanes":{
+    "prefix": "--",
+    "description": "do not use non-terminating tangent plane strategy for transcendental functions for non-linear [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-ent-conf":{
+    "prefix": "--",
+    "description": "check for entailed conflicts in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-ent-conf":{
+    "prefix": "--",
+    "description": "do not check for entailed conflicts in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-rewrite":{
+    "prefix": "--",
+    "description": "do rewrites in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-rewrite":{
+    "prefix": "--",
+    "description": "do not do rewrites in non-linear solver [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-solve-subs":{
+    "prefix": "--",
+    "description": "do solving for determining constant substitutions [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-solve-subs":{
+    "prefix": "--",
+    "description": "do not do solving for determining constant substitutions [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-purify":{
+    "prefix": "--",
+    "description": "purify non-linear terms at preprocess [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-purify":{
+    "prefix": "--",
+    "description": "do not purify non-linear terms at preprocess [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-split-zero":{
+    "prefix": "--",
+    "description": "intial splits on zero for all variables [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-split-zero":{
+    "prefix": "--",
+    "description": "do not intial splits on zero for all variables [*]",
+    "defaultValue": ""
+  },
+
+  "nl-ext-tf-taylor-deg": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "initial degree of polynomials for Taylor approximation",
+    "defaultValue": "0"
+  },
+  "nl-ext-tf-inc-prec":{
+    "prefix": "--",
+    "description": "increment the precision for transcendental function constraints [*]",
+    "defaultValue": ""
+  },
+
+  "no-nl-ext-tf-inc-prec":{
+    "prefix": "--",
+    "description": "do not increment the precision for transcendental function constraints [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-optimize-linear":{
+    "prefix": "--",
+    "description": "turn on optimization for linear array terms (see de Moura FMCAD 09 arrays paper) [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-optimize-linear":{
+    "prefix": "--",
+    "description": "do not turn on optimization for linear array terms (see de Moura FMCAD 09 arrays paper) [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-lazy-rintro1":{
+    "prefix": "--",
+    "description": "turn on optimization to only perform RIntro1 rule lazily (see Jovanovic/Barrett 2012: Being Careful with Theory Combination) [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-lazy-rintro1":{
+    "prefix": "--",
+    "description": "do not turn on optimization to only perform RIntro1 rule lazily (see Jovanovic/Barrett 2012: Being Careful with Theory Combination) [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-weak-equiv":{
+    "prefix": "--",
+    "description": "use algorithm from Christ/Hoenicke (SMT 2014) [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-weak-equiv":{
+    "prefix": "--",
+    "description": "do not use algorithm from Christ/Hoenicke (SMT 2014) [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-model-based":{
+    "prefix": "--",
+    "description": "turn on model-based array solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-model-based":{
+    "prefix": "--",
+    "description": "do not turn on model-based array solver [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-eager-index":{
+    "prefix": "--",
+    "description": "turn on eager index splitting for generated array lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-eager-index":{
+    "prefix": "--",
+    "description": "do not turn on eager index splitting for generated array lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-eager-lemmas":{
+    "prefix": "--",
+    "description": "turn on eager lemma generation for arrays [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-eager-lemmas":{
+    "prefix": "--",
+    "description": "do not turn on eager lemma generation for arrays [*]",
+    "defaultValue": ""
+  },
+
+
+  "arrays-reduce-sharing":{
+    "prefix": "--",
+    "description": "use model information to reduce size of care graph for arrays [*]",
+    "defaultValue": ""
+  },
+
+  "no-arrays-reduce-sharing":{
+    "prefix": "--",
+    "description": "do not use model information to reduce size of care graph for arrays [*]",
+    "defaultValue": ""
+  },
+
+  "arrays-prop": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "propagation effort for arrays: 0 is none, 1 is some, 2 is full",
+    "defaultValue": "0"
+  },
+  "stats-every-query":{
+    "prefix": "--",
+    "description": "in incremental mode, print stats after every satisfiability or validity query [*]",
+    "defaultValue": ""
+  },
+
+  "no-stats-every-query":{
+    "prefix": "--",
+    "description": "in incremental mode, do not print stats after every satisfiability or validity query [*]",
+    "defaultValue": ""
+  },
+
+  "stats-hide-zeros": {
+    "prefix": "--",
+    "description": "hide statistics which are zero",
+    "defaultValue": ""
+  },
+  "stats-show-zeros": {
+    "prefix": "--",
+    "description": "show statistics even when they are zero (default)",
+    "defaultValue": ""
+  },
+  "parse-only":{
+    "prefix": "--",
+    "description": "exit after parsing input [*]",
+    "defaultValue": ""
+  },
+
+  "no-parse-only":{
+    "prefix": "--",
+    "description": "do not exit after parsing input [*]",
+    "defaultValue": ""
+  },
+
+  "preprocess-only":{
+    "prefix": "--",
+    "description": "exit after preprocessing input [*]",
+    "defaultValue": ""
+  },
+
+  "no-preprocess-only":{
+    "prefix": "--",
+    "description": "do not exit after preprocessing input [*]",
+    "defaultValue": ""
+  },
+
+  "trace=TAG": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
-
     ],
-    "description": "",
+    "description": "trace something (e.g. -t pushpop), can repeat",
     "defaultValue": ""
   },
-  "": {
+  "debug=TAG": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
-
     ],
+    "description": "debug something (e.g. -d arith), can repeat",
+    "defaultValue": ""
+  },
+  "print-success":{
+    "prefix": "--",
+    "description": "print the 'success' output required of SMT-LIBv2 [*]",
+    "defaultValue": ""
+  },
+
+  "no-print-success":{
+    "prefix": "--",
+    "description": "do not print the 'success' output required of SMT-LIBv2 [*]",
+    "defaultValue": ""
+  },
+
+  "smtlib-strict": {
+    "prefix": "--",
+    "description": "SMT-LIBv2 compliance mode (implies other options)",
+    "defaultValue": ""
+  },
+  "bv-sat-solver": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "minisat",
+      "cryptominisat"
+    ],
+    "description": "choose which sat solver to use, see --bv-sat-solver=help (EXPERTS only)",
+    "defaultValue": "minisat"
+  },
+  "bv-sat-solver=help": {
+    "prefix": "--",
     "description": "",
+    "defaultValue": ""
+  },
+  "bitblast": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "lazy",
+      "eager"
+    ],
+    "description": "choose bitblasting mode, see --bitblast=help",
+    "defaultValue": "lazy"
+  },
+  "--bitblast=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "bitblast-aig": {
+    "prefix": "--",
+    "description": "bitblast by first converting to AIG (implies --bitblast=eager) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bitblast-aig": {
+    "prefix": "--",
+    "description": "do not bitblast by first converting to AIG (implies --bitblast=eager) [*]",
+    "defaultValue": ""
+  },
+
+
+  "bv-propagate":{
+    "prefix": "--",
+    "description": "use bit-vector propagation in the bit-blaster [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-propagate":{
+    "prefix": "--",
+    "description": "do not use bit-vector propagation in the bit-blaster [*]",
+    "defaultValue": ""
+  },
+
+  "bv-eq-solver":{
+    "prefix": "--",
+    "description": "use the equality engine for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-eq-solver":{
+    "prefix": "--",
+    "description": "do not use the equality engine for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-eq-slicer=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "auto",
+      "on",
+      "off"
+    ],
+    "description": "turn on the slicing equality solver for the bit-vector theory (only if --bitblast=lazy)",
+    "defaultValue": "auto"
+  },
+
+  "bv-eq-slicer=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+
+  "bv-inequality-solver":{
+    "prefix": "--",
+    "description": "turn on the inequality solver for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-inequality-solver":{
+    "prefix": "--",
+    "description": "do not turn on the inequality solver for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-algebraic-solver":{
+    "prefix": "--",
+    "description": "turn on the algebraic solver for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-algebraic-solver":{
+    "prefix": "--",
+    "description": "do not turn on the algebraic solver for the bit-vector theory (only if --bitblast=lazy) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-algebraic-budget": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "the budget allowed for the algebraic solver in number of SAT conflicts (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "bv-to-bool":{
+    "prefix": "--",
+    "description": "lift bit-vectors of size 1 to booleans when possible [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-to-bool":{
+    "prefix": "--",
+    "description": "do not lift bit-vectors of size 1 to booleans when possible [*]",
+    "defaultValue": ""
+  },
+
+  "bool-to-bv":{
+    "prefix": "--",
+    "description": "convert booleans to bit-vectors of size 1 when possible [*]",
+    "defaultValue": ""
+  },
+
+  "no-bool-to-bv":{
+    "prefix": "--",
+    "description": "do not convert booleans to bit-vectors of size 1 when possible [*]",
+    "defaultValue": ""
+  },
+
+  "bv-div-zero-const":{
+    "prefix": "--",
+    "description": "always return -1 on division by zero [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-div-zero-const":{
+    "prefix": "--",
+    "description": "do not always return -1 on division by zero [*]",
+    "defaultValue": ""
+  },
+
+  "bv-extract-arith":{
+    "prefix": "--",
+    "description": "enable rewrite pushing extract [i:0] over arithmetic operations (can blow up) (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-extract-arith":{
+    "prefix": "--",
+    "description": "do not enable rewrite pushing extract [i:0] over arithmetic operations (can blow up) (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-abstraction":{
+    "prefix": "--",
+    "description": "mcm benchmark abstraction (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-abstraction":{
+    "prefix": "--",
+    "description": "no mcm benchmark abstraction (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-skolemize":{
+    "prefix": "--",
+    "description": "skolemize arguments for bv abstraction (only does something if --bv-abstraction is on) (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-skolemize":{
+    "prefix": "--",
+    "description": "do not skolemize arguments for bv abstraction (only does something if --bv-abstraction is on) (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-num-func": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "number of function symbols in conflicts that are generalized (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "bv-eager-explanations":{
+    "prefix": "--",
+    "description": "compute bit-blasting propagation explanations eagerly (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-eager-explanations":{
+    "prefix": "--",
+    "description": "do not compute bit-blasting propagation explanations eagerly (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-quick-xplain":{
+    "prefix": "--",
+    "description": "minimize bv conflicts using the QuickXplain algorithm (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-quick-xplain":{
+    "prefix": "--",
+    "description": "do not minimize bv conflicts using the QuickXplain algorithm (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-intro-pow2":{
+    "prefix": "--",
+    "description": "introduce bitvector powers of two as a preprocessing pass (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-intro-pow2":{
+    "prefix": "--",
+    "description": "do not introduce bitvector powers of two as a preprocessing pass (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-gauss-elim":{
+    "prefix": "--",
+    "description": "simplify formula via Gaussian Elimination if applicable (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-gauss-elim":{
+    "prefix": "--",
+    "description": "do not simplify formula via Gaussian Elimination if applicable (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "bv-lazy-rewrite-extf":{
+    "prefix": "--",
+    "description": "lazily rewrite extended functions like bv2nat and int2bv [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-lazy-rewrite-extf":{
+    "prefix": "--",
+    "description": "do not lazily rewrite extended functions like bv2nat and int2bv [*]",
+    "defaultValue": ""
+  },
+
+  "bv-lazy-reduce-extf":{
+    "prefix": "--",
+    "description": "reduce extended functions like bv2nat and int2bv at last call instead of full effort [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-lazy-reduce-extf":{
+    "prefix": "--",
+    "description": "do not reduce extended functions like bv2nat and int2bv at last call instead of full effort [*]",
+    "defaultValue": ""
+  },
+
+  "bv-alg-extf":{
+    "prefix": "--",
+    "description": "algebraic inferences for extended functions [*]",
+    "defaultValue": ""
+  },
+
+  "no-bv-alg-extf":{
+    "prefix": "--",
+    "description": "no algebraic inferences for extended functions [*]",
+    "defaultValue": ""
+  },
+
+  "dt-rewrite-error-sel":{
+    "prefix": "--",
+    "description": "rewrite incorrectly applied selectors to arbitrary ground term (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-rewrite-error-sel":{
+    "prefix": "--",
+    "description": "do not rewrite incorrectly applied selectors to arbitrary ground term (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "dt-force-assignment":{
+    "prefix": "--",
+    "description": "force the datatypes solver to give specific values to all datatypes terms before answering sat [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-force-assignment":{
+    "prefix": "--",
+    "description": "do not force the datatypes solver to give specific values to all datatypes terms before answering sat [*]",
+    "defaultValue": ""
+  },
+
+  "dt-binary-split":{
+    "prefix": "--",
+    "description": "do binary splits for datatype constructor types [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-binary-split":{
+    "prefix": "--",
+    "description": "do not do binary splits for datatype constructor types [*]",
+    "defaultValue": ""
+  },
+
+  "dt-ref-sk-intro":{
+    "prefix": "--",
+    "description": "introduce reference skolems for shorter explanations [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-ref-sk-intro":{
+    "prefix": "--",
+    "description": "do not introduce reference skolems for shorter explanations [*]",
+    "defaultValue": ""
+  },
+
+  "dt-use-testers":{
+    "prefix": "--",
+    "description": "do not preprocess away tester predicates [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-use-testers":{
+    "prefix": "--",
+    "description": "preprocess away tester predicates [*]",
+    "defaultValue": ""
+  },
+
+  "cdt-bisimilar":{
+    "prefix": "--",
+    "description": "do bisimilarity check for co-datatypes [*]",
+    "defaultValue": ""
+  },
+
+  "no-cdt-bisimilar":{
+    "prefix": "--",
+    "description": "do not do bisimilarity check for co-datatypes [*]",
+    "defaultValue": ""
+  },
+
+  "dt-cyclic":{
+    "prefix": "--",
+    "description": "do cyclicity check for datatypes [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-cyclic":{
+    "prefix": "--",
+    "description": "do not do cyclicity check for datatypes [*]",
+    "defaultValue": ""
+  },
+
+  "dt-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "always send lemmas out instead of making internal inferences [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "do not always send lemmas out instead of making internal inferences [*]",
+    "defaultValue": ""
+  },
+
+  "dt-blast-splits":{
+    "prefix": "--",
+    "description": "when applicable, blast splitting lemmas for all variables at once [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-blast-splits":{
+    "prefix": "--",
+    "description": "do not when applicable, blast splitting lemmas for all variables at once [*]",
+    "defaultValue": ""
+  },
+
+  "dt-share-sel":{
+    "prefix": "--",
+    "description": "internally use shared selectors across multiple constructors [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-share-sel":{
+    "prefix": "--",
+    "description": "do not internally use shared selectors across multiple constructors [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-sym-break":{
+    "prefix": "--",
+    "description": "simple sygus sym break lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-sym-break":{
+    "prefix": "--",
+    "description": "do not simple sygus sym break lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-sym-break-dynamic":{
+    "prefix": "--",
+    "description": "dynamic sygus sym break lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-sym-break-dynamic":{
+    "prefix": "--",
+    "description": "no dynamic sygus sym break lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-opt1":{
+    "prefix": "--",
+    "description": "sygus experimental option [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-opt1":{
+    "prefix": "--",
+    "description": "no sygus experimental option [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-sym-break-lazy":{
+    "prefix": "--",
+    "description": "lazily add symmetry breaking lemmas for terms [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-sym-break-lazy":{
+    "prefix": "--",
+    "description": "do not lazily add symmetry breaking lemmas for terms [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-sym-break-rlv":{
+    "prefix": "--",
+    "description": "add relevancy conditions to symmetry breaking lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-sym-break-rlv":{
+    "prefix": "--",
+    "description": "do not add relevancy conditions to symmetry breaking lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-fair": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "uf-dt-size",
+      "direct",
+      "dt-height-bound",
+      "none"
+    ],
+    "description": "if and how to apply fairness for sygus",
+    "defaultValue": "uf-dt-size"
+  },
+  "sygus-fair=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "sygus-fair-max":{
+    "prefix": "--",
+    "description": "use max instead of sum for multi-function sygus conjectures [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-fair-max":{
+    "prefix": "--",
+    "description": "do not use max instead of sum for multi-function sygus conjectures [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-abort-size": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "tells enumerative sygus to only consider solutions up to term size N (-1 == no limit, default)",
+    "defaultValue": "0"
+  },
+  "decision=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "internal",
+      "justification",
+      "justification-stoponly"
+    ],
+    "description": "choose decision mode, see --decision=help",
+    "defaultValue": "internal"
+  },
+  "decision=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "decision-threshold": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "ignore all nodes greater than threshold in first attempt to pick decision (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "decision-use-weight":{
+    "prefix": "--",
+    "description": "use the weight nodes (locally, by looking at children) to direct recursive search (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-decision-use-weight":{
+    "prefix": "--",
+    "description": "do not use the weight nodes (locally, by looking at children) to direct recursive search (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "decision-random-weight": {
+    "type": "int",
+    "prefix": "--",
+    "min": 0,
+    "max": 2147483647,
+    "description": "assign random weights to nodes between 0 and N-1 (0: disable) (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "decision-weight-internal=HOW": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "off",
+      "max",
+      "sum",
+      "usr1"
+    ],
+    "description": "computer weights of internal nodes using children: off, max, sum, usr1 (meaning evolving) (EXPERTS only)",
+    "defaultValue": "off"
+  },
+  "default-expr-depth": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "print exprs to depth N (0 == default, -1 == no limit)",
+    "defaultValue": "0"
+  },
+  "default-dag-thresh": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "dagify common subexprs appearing > N times (1 == default, 0 == don't dagify)",
+    "defaultValue": "1"
+  },
+  "print-expr-types":{
+    "prefix": "--",
+    "description": "print types with variables when printing exprs [*]",
+    "defaultValue": ""
+  },
+
+  "no-print-expr-types":{
+    "prefix": "--",
+    "description": "do not print types with variables when printing exprs [*]",
+    "defaultValue": ""
+  },
+
+  "eager-type-checking": {
+    "prefix": "--",
+    "description": "type check expressions immediately on creation (debug builds only)",
+    "defaultValue": ""
+  },
+  "lazy-type-checking": {
+    "prefix": "--",
+    "description": "type check expressions only when necessary (default)",
+    "defaultValue": ""
+  },
+  "enable-idl-rewrite-equalities": {
+    "prefix": "--",
+    "description": "enable rewriting equalities into two inequalities in IDL solver (default is disabled)",
+    "defaultValue": ""
+  },
+  "disable-idl-rewrite-equalities": {
+    "prefix": "--",
+    "description": "disable rewriting equalities into two inequalities in IDL solver (default is disabled)",
+    "defaultValue": ""
+  },
+  "show-debug-tags": {
+    "prefix": "--",
+    "description": "show all available tags for debugging",
+    "defaultValue": ""
+  },
+  "show-trace-tags": {
+    "prefix": "--",
+    "description": "show all available tags for tracing",
+    "defaultValue": ""
+  },
+  "early-exit":{
+    "prefix": "--",
+    "description": "do not run destructors at exit; default on except in debug builds (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-early-exit":{
+    "prefix": "--",
+    "description": "run destructors at exit; default on except in debug builds (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "threads": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "Total number of threads for portfolio",
+    "defaultValue": "0"
+  },
+  "thread-stack": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "stack size for worker threads in MB (0 means use Boost/thread lib default)",
+    "defaultValue": "0"
+  },
+  "filter-lemma-length": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "don't share (among portfolio threads) lemmas strictly longer than N",
+    "defaultValue": "0"
+  },
+  "fallback-sequential":{
+    "prefix": "--",
+    "description": "Switch to sequential mode (instead of printing an error) if it can't be solved in portfolio mode [*]",
+    "defaultValue": ""
+  },
+
+  "no-fallback-sequential":{
+    "prefix": "--",
+    "description": "do not Switch to sequential mode (instead of printing an error) if it can't be solved in portfolio mode [*]",
+    "defaultValue": ""
+  },
+
+  "incremental-parallel":{
+    "prefix": "--",
+    "description": "Use parallel solver even in incremental mode (may print 'unknown's at times) [*]",
+    "defaultValue": ""
+  },
+
+  "no-incremental-parallel":{
+    "prefix": "--",
+    "description": "do not Use parallel solver even in incremental mode (may print 'unknown's at times) [*]",
+    "defaultValue": ""
+  },
+
+  "interactive":{
+    "prefix": "--",
+    "description": "force interactive/non-interactive mode [*]",
+    "defaultValue": ""
+  },
+
+  "no-interactive":{
+    "prefix": "--",
+    "description": "do not force interactive/non-interactive mode [*]",
+    "defaultValue": ""
+  },
+
+  "continued-execution": {
+    "prefix": "--",
+    "description": "continue executing commands, even on error",
+    "defaultValue": ""
+  },
+  "segv-spin":{
+    "prefix": "--",
+    "description": "spin on segfault/other crash waiting for gdb [*]",
+    "defaultValue": ""
+  },
+
+  "no-segv-spin":{
+    "prefix": "--",
+    "description": "do not spin on segfault/other crash waiting for gdb [*]",
+    "defaultValue": ""
+  },
+
+  "tear-down-incremental": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "implement PUSH/POP/multi-query by destroying and recreating SmtEngine every N queries (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "wait-to-join":{
+    "prefix": "--",
+    "description": "wait for other threads to join before quitting (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-wait-to-join":{
+    "prefix": "--",
+    "description": "do not wait for other threads to join before quitting (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "mmap":{
+    "prefix": "--",
+    "description": "memory map file input [*]",
+    "defaultValue": ""
+  },
+
+  "no-mmap":{
+    "prefix": "--",
+    "description": "do not memory map file input [*]",
+    "defaultValue": ""
+  },
+
+  "model-format": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "default",
+      "table"
+    ],
+    "description": "print format mode for models, see --model-format=help",
+    "defaultValue": "default"
+  },
+  "model-format=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "inst-format=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "default",
+      "szs"
+    ],
+    "description": "print format mode for instantiations, see --inst-format=help",
+    "defaultValue": "default"
+  },
+  "inst-format=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "lfsc-letification":{
+    "prefix": "--",
+    "description": "turns on global letification in LFSC proofs [*]",
+    "defaultValue": ""
+  },
+
+  "no-lfsc-letification":{
+    "prefix": "--",
+    "description": "do not turns on global letification in LFSC proofs [*]",
+    "defaultValue": ""
+  },
+
+  "aggressive-core-min":{
+    "prefix": "--",
+    "description": "turns on aggressive unsat core minimization (experimental) [*]",
+    "defaultValue": ""
+  },
+
+  "no-aggressive-core-min":{
+    "prefix": "--",
+    "description": "do not turns on aggressive unsat core minimization (experimental) [*]",
+    "defaultValue": ""
+  },
+
+  "fewer-preprocessing-holes":{
+    "prefix": "--",
+    "description": "try to eliminate preprocessing holes in proofs [*]",
+    "defaultValue": ""
+  },
+
+  "no-fewer-preprocessing-holes":{
+    "prefix": "--",
+    "description": "do not try to eliminate preprocessing holes in proofs [*]",
+    "defaultValue": ""
+  },
+
+  "allow-empty-dependencies":{
+    "prefix": "--",
+    "description": "if unable to track the dependencies of a rewritten/preprocessed assertion, fail silently [*]",
+    "defaultValue": ""
+  },
+
+  "no-allow-empty-dependencies":{
+    "prefix": "--",
+    "description": "if unable to track the dependencies of a rewritten/preprocessed assertion, do not fail silently [*]",
+    "defaultValue": ""
+  },
+
+  "random-freq": {
+    "type": "float",
+    "prefix": "--",
+    "min": 0.0,
+    "max": 1.0,
+    "description": "sets the frequency of random decisions in the sat solver (P=0.0 by default)",
+    "defaultValue": "0.0"
+  },
+  "random-seed": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "sets the random seed for the sat solver",
+    "defaultValue": "0"
+  },
+  "restart-int-base": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "sets the base restart interval for the sat solver (N=25 by default)",
+    "defaultValue": "25"
+  },
+  "restart-int-inc": {
+    "type": "float",
+    "prefix": "--",
+    "min": 0.0,
+    "max": 2147483647.0,
+    "description": "sets the restart interval increase factor for the sat solver (F=3.0 by default)",
+    "defaultValue": "3.0"
+  },
+  "refine-conflicts":{
+    "prefix": "--",
+    "description": "refine theory conflict clauses (default false) [*]",
+    "defaultValue": ""
+  },
+
+  "no-refine-conflicts":{
+    "prefix": "--",
+    "description": "do not refine theory conflict clauses (default false) [*]",
+    "defaultValue": ""
+  },
+
+  "minisat-elimination":{
+    "prefix": "--",
+    "description": "use Minisat elimination [*]",
+    "defaultValue": ""
+  },
+
+  "no-minisat-elimination":{
+    "prefix": "--",
+    "description": "do not use Minisat elimination [*]",
+    "defaultValue": ""
+  },
+
+  "minisat-dump-dimacs":{
+    "prefix": "--",
+    "description": "instead of solving minisat dumps the asserted clauses in Dimacs format [*]",
+    "defaultValue": ""
+  },
+
+  "no-minisat-dump-dimacs":{
+    "prefix": "--",
+    "description": "see minisat-dump-dimacs [*]",
+    "defaultValue": ""
+  },
+
+  "miniscope-quant":{
+    "prefix": "--",
+    "description": "miniscope quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-miniscope-quant":{
+    "prefix": "--",
+    "description": "no miniscope quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "miniscope-quant-fv":{
+    "prefix": "--",
+    "description": "miniscope quantifiers for ground subformulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-miniscope-quant-fv":{
+    "prefix": "--",
+    "description": "no miniscope quantifiers for ground subformulas [*]",
+    "defaultValue": ""
+  },
+
+  "quant-split":{
+    "prefix": "--",
+    "description": "apply splitting to quantified formulas based on variable disjoint disjuncts [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-split":{
+    "prefix": "--",
+    "description": "do not apply splitting to quantified formulas based on variable disjoint disjuncts [*]",
+    "defaultValue": ""
+  },
+
+  "prenex-quant": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "default",
+      "simple",
+      "dnorm",
+      "norm",
+      "none"
+    ],
+    "description": "prenex mode for quantified formulas",
+    "defaultValue": "default"
+  },
+  "prenex-quant=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "prenex-quant-user":{
+    "prefix": "--",
+    "description": "prenex quantified formulas with user patterns [*]",
+    "defaultValue": ""
+  },
+
+  "no-prenex-quant-user":{
+    "prefix": "--",
+    "description": "no prenex quantified formulas with user patterns [*]",
+    "defaultValue": ""
+  },
+
+  "var-elim-quant":{
+    "prefix": "--",
+    "description": "enable simple variable elimination for quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-var-elim-quant":{
+    "prefix": "--",
+    "description": "do not enable simple variable elimination for quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "var-ineq-elim-quant":{
+    "prefix": "--",
+    "description": "enable variable elimination based on infinite projection of unbound arithmetic variables [*]",
+    "defaultValue": ""
+  },
+
+  "no-var-ineq-elim-quant":{
+    "prefix": "--",
+    "description": "do not enable variable elimination based on infinite projection of unbound arithmetic variables [*]",
+    "defaultValue": ""
+  },
+
+  "dt-var-exp-quant":{
+    "prefix": "--",
+    "description": "expand datatype variables bound to one constructor in quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-var-exp-quant":{
+    "prefix": "--",
+    "description": "do not expand datatype variables bound to one constructor in quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "ite-lift-quant": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "none",
+      "simple",
+      "all"
+    ],
+    "description": "ite lifting mode for quantified formulas",
+    "defaultValue": "none"
+  },
+  "ite-lift-quant=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "cond-var-split-quant":{
+    "prefix": "--",
+    "description": "split quantified formulas that lead to variable eliminations [*]",
+    "defaultValue": ""
+  },
+
+  "no-cond-var-split-quant":{
+    "prefix": "--",
+    "description": "do not split quantified formulas that lead to variable eliminations [*]",
+    "defaultValue": ""
+  },
+
+  "cond-var-split-agg-quant":{
+    "prefix": "--",
+    "description": "aggressive split quantified formulas that lead to variable eliminations [*]",
+    "defaultValue": ""
+  },
+
+  "no-cond-var-split-agg-quant":{
+    "prefix": "--",
+    "description": "do not aggressive split quantified formulas that lead to variable eliminations [*]",
+    "defaultValue": ""
+  },
+
+  "ite-dtt-split-quant":{
+    "prefix": "--",
+    "description": "split ites with dt testers as conditions [*]",
+    "defaultValue": ""
+  },
+
+  "no-ite-dtt-split-quant":{
+    "prefix": "--",
+    "description": "do not split ites with dt testers as conditions [*]",
+    "defaultValue": ""
+  },
+
+  "pre-skolem-quant":{
+    "prefix": "--",
+    "description": "apply skolemization eagerly to bodies of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-pre-skolem-quant":{
+    "prefix": "--",
+    "description": "do not apply skolemization eagerly to bodies of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "pre-skolem-quant-nested":{
+    "prefix": "--",
+    "description": "apply skolemization to nested quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-pre-skolem-quant-nested":{
+    "prefix": "--",
+    "description": "do not apply skolemization to nested quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "pre-skolem-quant-agg":{
+    "prefix": "--",
+    "description": "apply skolemization to quantified formulas aggressively [*]",
+    "defaultValue": ""
+  },
+
+  "no-pre-skolem-quant-agg":{
+    "prefix": "--",
+    "description": "do not apply skolemization to quantified formulas aggressively [*]",
+    "defaultValue": ""
+  },
+
+  "ag-miniscope-quant":{
+    "prefix": "--",
+    "description": "perform aggressive miniscoping for quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-ag-miniscope-quant":{
+    "prefix": "--",
+    "description": "do not perform aggressive miniscoping for quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "elim-taut-quant":{
+    "prefix": "--",
+    "description": "eliminate tautological disjuncts of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-elim-taut-quant":{
+    "prefix": "--",
+    "description": "do not eliminate tautological disjuncts of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "elim-ext-arith-quant":{
+    "prefix": "--",
+    "description": "eliminate extended arithmetic symbols in quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-elim-ext-arith-quant":{
+    "prefix": "--",
+    "description": "do not eliminate extended arithmetic symbols in quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "cond-rewrite-quant":{
+    "prefix": "--",
+    "description": "conditional rewriting of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-cond-rewrite-quant":{
+    "prefix": "--",
+    "description": "do not conditional rewriting of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "global-negate":{
+    "prefix": "--",
+    "description": "do global negation of input formula [*]",
+    "defaultValue": ""
+  },
+
+  "no-global-negate":{
+    "prefix": "--",
+    "description": "do not do global negation of input formula [*]",
+    "defaultValue": ""
+  },
+
+  "e-matching":{
+    "prefix": "--",
+    "description": "whether to do heuristic E-matching [*]",
+    "defaultValue": ""
+  },
+
+  "no-e-matching":{
+    "prefix": "--",
+    "description": "do not whether to do heuristic E-matching [*]",
+    "defaultValue": ""
+  },
+
+  "term-db-mode": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "which ground terms to consider for instantiation",
+    "defaultValue": "0"
+  },
+  "register-quant-body-terms":{
+    "prefix": "--",
+    "description": "consider ground terms within bodies of quantified formulas for matching [*]",
+    "defaultValue": ""
+  },
+
+  "no-register-quant-body-terms":{
+    "prefix": "--",
+    "description": "do not consider ground terms within bodies of quantified formulas for matching [*]",
+    "defaultValue": ""
+  },
+
+  "infer-arith-trigger-eq":{
+    "prefix": "--",
+    "description": "infer equalities for trigger terms based on solving arithmetic equalities [*]",
+    "defaultValue": ""
+  },
+
+  "no-infer-arith-trigger-eq":{
+    "prefix": "--",
+    "description": "do not infer equalities for trigger terms based on solving arithmetic equalities [*]",
+    "defaultValue": ""
+  },
+
+  "infer-arith-trigger-eq-exp":{
+    "prefix": "--",
+    "description": "record explanations for inferArithTriggerEq [*]",
+    "defaultValue": ""
+  },
+
+  "no-infer-arith-trigger-eq-exp":{
+    "prefix": "--",
+    "description": "do not record explanations for inferArithTriggerEq [*]",
+    "defaultValue": ""
+  },
+
+  "strict-triggers":{
+    "prefix": "--",
+    "description": "only instantiate quantifiers with user patterns based on triggers [*]",
+    "defaultValue": ""
+  },
+
+  "no-strict-triggers":{
+    "prefix": "--",
+    "description": "do not only instantiate quantifiers with user patterns based on triggers [*]",
+    "defaultValue": ""
+  },
+
+  "relevant-triggers":{
+    "prefix": "--",
+    "description": "prefer triggers that are more relevant based on SInE style analysis [*]",
+    "defaultValue": ""
+  },
+
+  "no-relevant-triggers":{
+    "prefix": "--",
+    "description": "do not prefer triggers that are more relevant based on SInE style analysis [*]",
+    "defaultValue": ""
+  },
+
+  "relational-triggers":{
+    "prefix": "--",
+    "description": "choose relational triggers such as x = f(y), x >= f(y) [*]",
+    "defaultValue": ""
+  },
+
+  "no-relational-triggers":{
+    "prefix": "--",
+    "description": "do not choose relational triggers such as x = f(y), x >= f(y) [*]",
+    "defaultValue": ""
+  },
+
+  "purify-triggers":{
+    "prefix": "--",
+    "description": "purify triggers, e.g. f( x+1 ) becomes f( y ), x mapsto y-1 [*]",
+    "defaultValue": ""
+  },
+
+  "no-purify-triggers":{
+    "prefix": "--",
+    "description": "do not purify triggers, e.g. f( x+1 ) becomes f( y ), x mapsto y-1 [*]",
+    "defaultValue": ""
+  },
+
+  "purify-dt-triggers":{
+    "prefix": "--",
+    "description": "purify dt triggers, match all constructors of correct form instead of selectors [*]",
+    "defaultValue": ""
+  },
+
+  "no-purify-dt-triggers":{
+    "prefix": "--",
+    "description": "do not purify dt triggers, match all constructors of correct form instead of selectors [*]",
+    "defaultValue": ""
+  },
+
+  "pure-th-triggers":{
+    "prefix": "--",
+    "description": "use pure theory terms as single triggers [*]",
+    "defaultValue": ""
+  },
+
+  "no-pure-th-triggers":{
+    "prefix": "--",
+    "description": "do not use pure theory terms as single triggers [*]",
+    "defaultValue": ""
+  },
+
+  "partial-triggers":{
+    "prefix": "--",
+    "description": "use triggers that do not contain all free variables [*]",
+    "defaultValue": ""
+  },
+
+  "no-partial-triggers":{
+    "prefix": "--",
+    "description": "do not use triggers that do not contain all free variables [*]",
+    "defaultValue": ""
+  },
+
+  "multi-trigger-when-single":{
+    "prefix": "--",
+    "description": "select multi triggers when single triggers exist [*]",
+    "defaultValue": ""
+  },
+
+  "no-multi-trigger-when-single":{
+    "prefix": "--",
+    "description": "do not select multi triggers when single triggers exist [*]",
+    "defaultValue": ""
+  },
+
+  "multi-trigger-priority":{
+    "prefix": "--",
+    "description": "only try multi triggers if single triggers give no instantiations [*]",
+    "defaultValue": ""
+  },
+
+  "no-multi-trigger-priority":{
+    "prefix": "--",
+    "description": "do not only try multi triggers if single triggers give no instantiations [*]",
+    "defaultValue": ""
+  },
+
+  "multi-trigger-cache":{
+    "prefix": "--",
+    "description": "caching version of multi triggers [*]",
+    "defaultValue": ""
+  },
+
+  "no-multi-trigger-cache":{
+    "prefix": "--",
+    "description": "do not caching version of multi triggers [*]",
+    "defaultValue": ""
+  },
+
+  "multi-trigger-linear":{
+    "prefix": "--",
+    "description": "implementation of multi triggers where maximum number of instantiations is linear wrt number of ground terms [*]",
+    "defaultValue": ""
+  },
+
+  "no-multi-trigger-linear":{
+    "prefix": "--",
+    "description": "do not implementation of multi triggers where maximum number of instantiations is linear wrt number of ground terms [*]",
+    "defaultValue": ""
+  },
+
+  "trigger-sel": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "selection mode for triggers",
+    "defaultValue": "0"
+  },
+  "trigger-active-sel": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "selection mode to activate triggers",
+    "defaultValue": "0"
+  },
+  "user-pat=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "policy for handling user-provided patterns for quantifier instantiation",
+    "defaultValue": "all"
+  },
+  "increment-triggers":{
+    "prefix": "--",
+    "description": "generate additional triggers as needed during search [*]",
+    "defaultValue": ""
+  },
+
+  "no-increment-triggers":{
+    "prefix": "--",
+    "description": "do not generate additional triggers as needed during search [*]",
+    "defaultValue": ""
+  },
+
+  "inst-when=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "when to apply instantiation",
+    "defaultValue": "all"
+  },
+  "inst-when-strict-interleave":{
+    "prefix": "--",
+    "description": "ensure theory combination and standard quantifier effort strategies take turns [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-when-strict-interleave":{
+    "prefix": "--",
+    "description": "do not ensure theory combination and standard quantifier effort strategies take turns [*]",
+    "defaultValue": ""
+  },
+
+  "inst-when-phase=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "instantiation rounds quantifiers takes (>=1) before allowing theory combination to happen",
+    "defaultValue": "all"
+  },
+  "inst-when-tc-first":{
+    "prefix": "--",
+    "description": "allow theory combination to happen once initially, before quantifier strategies are run [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-when-tc-first":{
+    "prefix": "--",
+    "description": "do not allow theory combination to happen once initially, before quantifier strategies are run [*]",
+    "defaultValue": ""
+  },
+
+  "quant-model-ee":{
+    "prefix": "--",
+    "description": "use equality engine of model for last call effort [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-model-ee":{
+    "prefix": "--",
+    "description": "do not use equality engine of model for last call effort [*]",
+    "defaultValue": ""
+  },
+
+  "inst-max-level=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "maximum inst level of terms used to instantiate quantified formulas with (-1 == no limit, default)",
+    "defaultValue": "all"
+  },
+  "inst-level-input-only":{
+    "prefix": "--",
+    "description": "only input terms are assigned instantiation level zero [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-level-input-only":{
+    "prefix": "--",
+    "description": "do not only input terms are assigned instantiation level zero [*]",
+    "defaultValue": ""
+  },
+
+  "quant-rep-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "selection mode for representatives in quantifiers engine",
+    "defaultValue": "all"
+  },
+  "inst-rlv-cond":{
+    "prefix": "--",
+    "description": "add relevancy conditions for instantiations [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-rlv-cond":{
+    "prefix": "--",
+    "description": "do not add relevancy conditions for instantiations [*]",
+    "defaultValue": ""
+  },
+
+  "full-saturate-quant":{
+    "prefix": "--",
+    "description": "when all other quantifier instantiation strategies fail, instantiate with ground terms from relevant domain, then arbitrary ground terms before answering unknown [*]",
+    "defaultValue": ""
+  },
+
+  "no-full-saturate-quant":{
+    "prefix": "--",
+    "description": "do not when all other quantifier instantiation strategies fail, instantiate with ground terms from relevant domain, then arbitrary ground terms before answering unknown [*]",
+    "defaultValue": ""
+  },
+
+  "full-saturate-quant-rd":{
+    "prefix": "--",
+    "description": "whether to use relevant domain first for full saturation instantiation strategy [*]",
+    "defaultValue": ""
+  },
+
+  "no-full-saturate-quant-rd":{
+    "prefix": "--",
+    "description": "do not whether to use relevant domain first for full saturation instantiation strategy [*]",
+    "defaultValue": ""
+  },
+
+  "fs-interleave":{
+    "prefix": "--",
+    "description": "interleave full saturate instantiation with other techniques [*]",
+    "defaultValue": ""
+  },
+
+  "no-fs-interleave":{
+    "prefix": "--",
+    "description": "do not interleave full saturate instantiation with other techniques [*]",
+    "defaultValue": ""
+  },
+
+  "literal-matching=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "choose literal matching mode",
+    "defaultValue": "all"
+  },
+  "finite-model-find":{
+    "prefix": "--",
+    "description": "use finite model finding heuristic for quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-finite-model-find":{
+    "prefix": "--",
+    "description": "do not use finite model finding heuristic for quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "quant-fun-wd":{
+    "prefix": "--",
+    "description": "assume that function defined by quantifiers are well defined [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-fun-wd":{
+    "prefix": "--",
+    "description": "do not assume that function defined by quantifiers are well defined [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-fun":{
+    "prefix": "--",
+    "description": "find models for recursively defined functions, assumes functions are admissible [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-fun":{
+    "prefix": "--",
+    "description": "do not find models for recursively defined functions, assumes functions are admissible [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-fun-rlv":{
+    "prefix": "--",
+    "description": "find models for recursively defined functions, assumes functions are admissible, allows empty type when function is irrelevant [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-fun-rlv":{
+    "prefix": "--",
+    "description": "do not find models for recursively defined functions, assumes functions are admissible, allows empty type when function is irrelevant [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-empty-sorts":{
+    "prefix": "--",
+    "description": "allow finite model finding to assume sorts that do not occur in ground assertions are empty [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-empty-sorts":{
+    "prefix": "--",
+    "description": "do not allow finite model finding to assume sorts that do not occur in ground assertions are empty [*]",
+    "defaultValue": ""
+  },
+
+  "mbqi=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "choose mode for model-based quantifier instantiation",
+    "defaultValue": "all"
+  },
+  "mbqi-one-inst-per-round":{
+    "prefix": "--",
+    "description": "only add one instantiation per quantifier per round for mbqi [*]",
+    "defaultValue": ""
+  },
+
+  "no-mbqi-one-inst-per-round":{
+    "prefix": "--",
+    "description": "do not only add one instantiation per quantifier per round for mbqi [*]",
+    "defaultValue": ""
+  },
+
+  "mbqi-one-quant-per-round":{
+    "prefix": "--",
+    "description": "only add instantiations for one quantifier per round for mbqi [*]",
+    "defaultValue": ""
+  },
+
+  "no-mbqi-one-quant-per-round":{
+    "prefix": "--",
+    "description": "do not only add instantiations for one quantifier per round for mbqi [*]",
+    "defaultValue": ""
+  },
+
+  "mbqi-interleave":{
+    "prefix": "--",
+    "description": "interleave model-based quantifier instantiation with other techniques [*]",
+    "defaultValue": ""
+  },
+
+  "no-mbqi-interleave":{
+    "prefix": "--",
+    "description": "do not interleave model-based quantifier instantiation with other techniques [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-inst-engine":{
+    "prefix": "--",
+    "description": "use instantiation engine in conjunction with finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-inst-engine":{
+    "prefix": "--",
+    "description": "do not use instantiation engine in conjunction with finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-inst-gen":{
+    "prefix": "--",
+    "description": "enable Inst-Gen instantiation techniques for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-inst-gen":{
+    "prefix": "--",
+    "description": "do not enable Inst-Gen instantiation techniques for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-inst-gen-one-quant-per-round":{
+    "prefix": "--",
+    "description": "only perform Inst-Gen instantiation techniques on one quantifier per round [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-inst-gen-one-quant-per-round":{
+    "prefix": "--",
+    "description": "do not only perform Inst-Gen instantiation techniques on one quantifier per round [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-fresh-dc":{
+    "prefix": "--",
+    "description": "use fresh distinguished representative when applying Inst-Gen techniques [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-fresh-dc":{
+    "prefix": "--",
+    "description": "do not use fresh distinguished representative when applying Inst-Gen techniques [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-fmc-simple":{
+    "prefix": "--",
+    "description": "simple models in full model check for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-fmc-simple":{
+    "prefix": "--",
+    "description": "do not simple models in full model check for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-bound-int":{
+    "prefix": "--",
+    "description": "finite model finding on bounded integer quantification [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-bound-int":{
+    "prefix": "--",
+    "description": "do not finite model finding on bounded integer quantification [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-bound":{
+    "prefix": "--",
+    "description": "finite model finding on bounded quantification [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-bound":{
+    "prefix": "--",
+    "description": "do not finite model finding on bounded quantification [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-bound-lazy":{
+    "prefix": "--",
+    "description": "enforce bounds for bounded quantification lazily via use of proxy variables [*]",
+    "defaultValue": ""
+  },
+
+  "no-fmf-bound-lazy":{
+    "prefix": "--",
+    "description": "do not enforce bounds for bounded quantification lazily via use of proxy variables [*]",
+    "defaultValue": ""
+  },
+
+  "fmf-bound-min-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for which types of bounds to minimize via first decision heuristics",
+    "defaultValue": "all"
+  },
+  "quant-cf":{
+    "prefix": "--",
+    "description": "enable conflict find mechanism for quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-cf":{
+    "prefix": "--",
+    "description": "do not enable conflict find mechanism for quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "quant-cf-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "what effort to apply conflict find mechanism",
+    "defaultValue": "all"
+  },
+  "quant-cf-when=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "when to invoke conflict find mechanism for quantifiers",
+    "defaultValue": "all"
+  },
+  "qcf-tconstraint":{
+    "prefix": "--",
+    "description": "enable entailment checks for t-constraints in qcf algorithm [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-tconstraint":{
+    "prefix": "--",
+    "description": "do not enable entailment checks for t-constraints in qcf algorithm [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-all-conflict":{
+    "prefix": "--",
+    "description": "add all available conflicting instances during conflict-based instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-all-conflict":{
+    "prefix": "--",
+    "description": "do not add all available conflicting instances during conflict-based instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-nested-conflict":{
+    "prefix": "--",
+    "description": "consider conflicts for nested quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-nested-conflict":{
+    "prefix": "--",
+    "description": "do not consider conflicts for nested quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-vo-exp":{
+    "prefix": "--",
+    "description": "qcf experimental variable ordering [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-vo-exp":{
+    "prefix": "--",
+    "description": "do not qcf experimental variable ordering [*]",
+    "defaultValue": ""
+  },
+
+  "inst-no-entail":{
+    "prefix": "--",
+    "description": "do not consider instances of quantified formulas that are currently entailed [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-no-entail":{
+    "prefix": "--",
+    "description": "do not do not consider instances of quantified formulas that are currently entailed [*]",
+    "defaultValue": ""
+  },
+
+  "inst-no-model-true":{
+    "prefix": "--",
+    "description": "do not consider instances of quantified formulas that are currently true in model, if it is available [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-no-model-true":{
+    "prefix": "--",
+    "description": "do not do not consider instances of quantified formulas that are currently true in model, if it is available [*]",
+    "defaultValue": ""
+  },
+
+  "inst-prop":{
+    "prefix": "--",
+    "description": "internal propagation for instantiations for selecting relevant instances [*]",
+    "defaultValue": ""
+  },
+
+  "no-inst-prop":{
+    "prefix": "--",
+    "description": "do not internal propagation for instantiations for selecting relevant instances [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-eager-test":{
+    "prefix": "--",
+    "description": "optimization, test qcf instances eagerly [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-eager-test":{
+    "prefix": "--",
+    "description": "do not optimization, test qcf instances eagerly [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-eager-check-rd":{
+    "prefix": "--",
+    "description": "optimization, eagerly check relevant domain of matched position [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-eager-check-rd":{
+    "prefix": "--",
+    "description": "do not optimization, eagerly check relevant domain of matched position [*]",
+    "defaultValue": ""
+  },
+
+  "qcf-skip-rd":{
+    "prefix": "--",
+    "description": "optimization, skip instances based on possibly irrelevant portions of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-qcf-skip-rd":{
+    "prefix": "--",
+    "description": "do not optimization, skip instances based on possibly irrelevant portions of quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "rewrite-rules":{
+    "prefix": "--",
+    "description": "use rewrite rules module [*]",
+    "defaultValue": ""
+  },
+
+  "no-rewrite-rules":{
+    "prefix": "--",
+    "description": "do not use rewrite rules module [*]",
+    "defaultValue": ""
+  },
+
+  "rr-one-inst-per-round":{
+    "prefix": "--",
+    "description": "add one instance of rewrite rule per round [*]",
+    "defaultValue": ""
+  },
+
+  "no-rr-one-inst-per-round":{
+    "prefix": "--",
+    "description": "do not add one instance of rewrite rule per round [*]",
+    "defaultValue": ""
+  },
+
+  "quant-ind":{
+    "prefix": "--",
+    "description": "use all available techniques for inductive reasoning [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-ind":{
+    "prefix": "--",
+    "description": "do not use all available techniques for inductive reasoning [*]",
+    "defaultValue": ""
+  },
+
+  "dt-stc-ind":{
+    "prefix": "--",
+    "description": "apply strengthening for existential quantification over datatypes based on structural induction [*]",
+    "defaultValue": ""
+  },
+
+  "no-dt-stc-ind":{
+    "prefix": "--",
+    "description": "do not apply strengthening for existential quantification over datatypes based on structural induction [*]",
+    "defaultValue": ""
+  },
+
+  "int-wf-ind":{
+    "prefix": "--",
+    "description": "apply strengthening for integers based on well-founded induction [*]",
+    "defaultValue": ""
+  },
+
+  "no-int-wf-ind":{
+    "prefix": "--",
+    "description": "do not apply strengthening for integers based on well-founded induction [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-gen":{
+    "prefix": "--",
+    "description": "generate candidate conjectures for inductive proofs [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-gen":{
+    "prefix": "--",
+    "description": "do not generate candidate conjectures for inductive proofs [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-gen-per-round=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "number of conjectures to generate per instantiation round",
+    "defaultValue": "all"
+  },
+  "conjecture-no-filter":{
+    "prefix": "--",
+    "description": "do not filter conjectures [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-no-filter":{
+    "prefix": "--",
+    "description": "do not do not filter conjectures [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-filter-active-terms":{
+    "prefix": "--",
+    "description": "filter based on active terms [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-filter-active-terms":{
+    "prefix": "--",
+    "description": "do not filter based on active terms [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-filter-canonical":{
+    "prefix": "--",
+    "description": "filter based on canonicity [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-filter-canonical":{
+    "prefix": "--",
+    "description": "do not filter based on canonicity [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-filter-model":{
+    "prefix": "--",
+    "description": "filter based on model [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-filter-model":{
+    "prefix": "--",
+    "description": "do not filter based on model [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-gen-gt-enum=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "number of ground terms to generate for model filtering",
+    "defaultValue": "all"
+  },
+  "conjecture-gen-uee-intro":{
+    "prefix": "--",
+    "description": "more aggressive merging for universal equality engine, introduces terms [*]",
+    "defaultValue": ""
+  },
+
+  "no-conjecture-gen-uee-intro":{
+    "prefix": "--",
+    "description": "do not more aggressive merging for universal equality engine, introduces terms [*]",
+    "defaultValue": ""
+  },
+
+  "conjecture-gen-max-depth=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "maximum depth of terms to consider for conjectures",
+    "defaultValue": "all"
+  },
+  "cegqi":{
+    "prefix": "--",
+    "description": "counterexample-guided quantifier instantiation for sygus [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi":{
+    "prefix": "--",
+    "description": "do not counterexample-guided quantifier instantiation for sygus [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for processing single invocation synthesis conjectures",
+    "defaultValue": "all"
+  },
+  "cegqi-si-partial":{
+    "prefix": "--",
+    "description": "combined techniques for synthesis conjectures that are partially single invocation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-partial":{
+    "prefix": "--",
+    "description": "do not combined techniques for synthesis conjectures that are partially single invocation [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si-reconstruct":{
+    "prefix": "--",
+    "description": "reconstruct solutions for single invocation conjectures in original grammar [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-reconstruct":{
+    "prefix": "--",
+    "description": "do not reconstruct solutions for single invocation conjectures in original grammar [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si-sol-min-core":{
+    "prefix": "--",
+    "description": "minimize solutions for single invocation conjectures based on unsat core [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-sol-min-core":{
+    "prefix": "--",
+    "description": "do not minimize solutions for single invocation conjectures based on unsat core [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si-sol-min-inst":{
+    "prefix": "--",
+    "description": "minimize individual instantiations for single invocation conjectures based on unsat core [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-sol-min-inst":{
+    "prefix": "--",
+    "description": "do not minimize individual instantiations for single invocation conjectures based on unsat core [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si-reconstruct-const":{
+    "prefix": "--",
+    "description": "include constants when reconstruct solutions for single invocation conjectures in original grammar [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-reconstruct-const":{
+    "prefix": "--",
+    "description": "do not include constants when reconstruct solutions for single invocation conjectures in original grammar [*]",
+    "defaultValue": ""
+  },
+
+  "cegqi-si-abort":{
+    "prefix": "--",
+    "description": "abort if synthesis conjecture is not single invocation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cegqi-si-abort":{
+    "prefix": "--",
+    "description": "do not abort if synthesis conjecture is not single invocation [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-pbe":{
+    "prefix": "--",
+    "description": "sygus advanced pruning based on examples [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-pbe":{
+    "prefix": "--",
+    "description": "do not sygus advanced pruning based on examples [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-qe-preproc":{
+    "prefix": "--",
+    "description": "use quantifier elimination as a preprocessing step for sygus [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-qe-preproc":{
+    "prefix": "--",
+    "description": "do not use quantifier elimination as a preprocessing step for sygus [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-min-grammar":{
+    "prefix": "--",
+    "description": "statically minimize sygus grammars [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-min-grammar":{
+    "prefix": "--",
+    "description": "do not statically minimize sygus grammars [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-add-const-grammar":{
+    "prefix": "--",
+    "description": "statically add constants appearing in conjecture to grammars [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-add-const-grammar":{
+    "prefix": "--",
+    "description": "do not statically add constants appearing in conjecture to grammars [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-grammar-norm":{
+    "prefix": "--",
+    "description": "statically normalize sygus grammars based on flattening (linearization) [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-grammar-norm":{
+    "prefix": "--",
+    "description": "do not statically normalize sygus grammars based on flattening (linearization) [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-templ-embed-grammar":{
+    "prefix": "--",
+    "description": "embed sygus templates into grammars [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-templ-embed-grammar":{
+    "prefix": "--",
+    "description": "do not embed sygus templates into grammars [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-inv-templ=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "template mode for sygus invariant synthesis",
+    "defaultValue": "all"
+  },
+  "sygus-auto-unfold":{
+    "prefix": "--",
+    "description": "enable approach which automatically unfolds transition systems for directly solving invariant synthesis problems [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-auto-unfold":{
+    "prefix": "--",
+    "description": "do not enable approach which automatically unfolds transition systems for directly solving invariant synthesis problems [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-unif-csol":{
+    "prefix": "--",
+    "description": "enable new approach which unifies conditional solutions [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-unif-csol":{
+    "prefix": "--",
+    "description": "do not enable new approach which unifies conditional solutions [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-direct-eval":{
+    "prefix": "--",
+    "description": "direct unfolding of evaluation functions [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-direct-eval":{
+    "prefix": "--",
+    "description": "do not direct unfolding of evaluation functions [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-unfold-bool":{
+    "prefix": "--",
+    "description": "do unfolding of Boolean evaluation functions that appear in refinement lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-unfold-bool":{
+    "prefix": "--",
+    "description": "do not do unfolding of Boolean evaluation functions that appear in refinement lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-cref-eval":{
+    "prefix": "--",
+    "description": "direct evaluation of refinement lemmas for conflict analysis [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-cref-eval":{
+    "prefix": "--",
+    "description": "do not direct evaluation of refinement lemmas for conflict analysis [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-cref-eval-min-exp":{
+    "prefix": "--",
+    "description": "use min explain for direct evaluation of refinement lemmas for conflict analysis [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-cref-eval-min-exp":{
+    "prefix": "--",
+    "description": "do not use min explain for direct evaluation of refinement lemmas for conflict analysis [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-stream":{
+    "prefix": "--",
+    "description": "enumerate a stream of solutions instead of terminating after the first one [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-stream":{
+    "prefix": "--",
+    "description": "do not enumerate a stream of solutions instead of terminating after the first one [*]",
+    "defaultValue": ""
+  },
+
+  "cegis-sample=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for using samples in the counterexample-guided inductive synthesis loop",
+    "defaultValue": "all"
+  },
+  "sygus-rr":{
+    "prefix": "--",
+    "description": "use sygus to enumerate and verify correctness of rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-rr":{
+    "prefix": "--",
+    "description": "do not use sygus to enumerate and verify correctness of rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-rr-synth":{
+    "prefix": "--",
+    "description": "use sygus to enumerate candidate rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-rr-synth":{
+    "prefix": "--",
+    "description": "do not use sygus to enumerate candidate rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-rr-verify":{
+    "prefix": "--",
+    "description": "use sygus to verify the correctness of rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-rr-verify":{
+    "prefix": "--",
+    "description": "do not use sygus to verify the correctness of rewrite rules via sampling [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-samples=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "number of points to consider when doing sygus rewriter sample testing",
+    "defaultValue": "all"
+  },
+  "sygus-sample-grammar":{
+    "prefix": "--",
+    "description": "when applicable, use grammar for choosing sample points [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-sample-grammar":{
+    "prefix": "--",
+    "description": "do not when applicable, use grammar for choosing sample points [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi":{
+    "prefix": "--",
+    "description": "turns on counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi":{
+    "prefix": "--",
+    "description": "do not turns on counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-full":{
+    "prefix": "--",
+    "description": "turns on full effort counterexample-based quantifier instantiation, which may resort to model-value instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-full":{
+    "prefix": "--",
+    "description": "do not turns on full effort counterexample-based quantifier instantiation, which may resort to model-value instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-recurse":{
+    "prefix": "--",
+    "description": "turns on recursive counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-recurse":{
+    "prefix": "--",
+    "description": "do not turns on recursive counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-sat":{
+    "prefix": "--",
+    "description": "answer sat when quantifiers are asserted with counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-sat":{
+    "prefix": "--",
+    "description": "do not answer sat when quantifiers are asserted with counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-model":{
+    "prefix": "--",
+    "description": "guide instantiations by model values for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-model":{
+    "prefix": "--",
+    "description": "do not guide instantiations by model values for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-all":{
+    "prefix": "--",
+    "description": "apply counterexample-based instantiation to all quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-all":{
+    "prefix": "--",
+    "description": "do not apply counterexample-based instantiation to all quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-multi-inst":{
+    "prefix": "--",
+    "description": "when applicable, do multi instantiations per quantifier per round in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-multi-inst":{
+    "prefix": "--",
+    "description": "do not when applicable, do multi instantiations per quantifier per round in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-repeat-lit":{
+    "prefix": "--",
+    "description": "solve literals more than once in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-repeat-lit":{
+    "prefix": "--",
+    "description": "do not solve literals more than once in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-innermost":{
+    "prefix": "--",
+    "description": "only process innermost quantified formulas in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-innermost":{
+    "prefix": "--",
+    "description": "do not only process innermost quantified formulas in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-nested-qe":{
+    "prefix": "--",
+    "description": "process nested quantified formulas with quantifier elimination in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-nested-qe":{
+    "prefix": "--",
+    "description": "do not process nested quantified formulas with quantifier elimination in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-use-inf-int":{
+    "prefix": "--",
+    "description": "use integer infinity for vts in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-use-inf-int":{
+    "prefix": "--",
+    "description": "do not use integer infinity for vts in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-use-inf-real":{
+    "prefix": "--",
+    "description": "use real infinity for vts in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-use-inf-real":{
+    "prefix": "--",
+    "description": "do not use real infinity for vts in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-prereg-inst":{
+    "prefix": "--",
+    "description": "preregister ground instantiations in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-prereg-inst":{
+    "prefix": "--",
+    "description": "do not preregister ground instantiations in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-min-bounds":{
+    "prefix": "--",
+    "description": "use minimally constrained lower/upper bound for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-min-bounds":{
+    "prefix": "--",
+    "description": "do not use minimally constrained lower/upper bound for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-round-up-lia":{
+    "prefix": "--",
+    "description": "round up integer lower bounds in substitutions for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-round-up-lia":{
+    "prefix": "--",
+    "description": "do not round up integer lower bounds in substitutions for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-midpoint":{
+    "prefix": "--",
+    "description": "choose substitutions based on midpoints of lower and upper bounds for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-midpoint":{
+    "prefix": "--",
+    "description": "do not choose substitutions based on midpoints of lower and upper bounds for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-nopt":{
+    "prefix": "--",
+    "description": "non-optimal bounds for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-nopt":{
+    "prefix": "--",
+    "description": "do not non-optimal bounds for counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-lit-dep":{
+    "prefix": "--",
+    "description": "dependency lemmas for quantifier alternation in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-lit-dep":{
+    "prefix": "--",
+    "description": "do not dependency lemmas for quantifier alternation in counterexample-based quantifier instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "quant-epr":{
+    "prefix": "--",
+    "description": "infer whether in effectively propositional fragment, use for cbqi [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-epr":{
+    "prefix": "--",
+    "description": "do not infer whether in effectively propositional fragment, use for cbqi [*]",
+    "defaultValue": ""
+  },
+
+  "quant-epr-match":{
+    "prefix": "--",
+    "description": "use matching heuristics for EPR instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-epr-match":{
+    "prefix": "--",
+    "description": "do not use matching heuristics for EPR instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-bv":{
+    "prefix": "--",
+    "description": "use word-level inversion approach for counterexample-guided quantifier instantiation for bit-vectors [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-bv":{
+    "prefix": "--",
+    "description": "do not use word-level inversion approach for counterexample-guided quantifier instantiation for bit-vectors [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-bv-interleave-value":{
+    "prefix": "--",
+    "description": "interleave model value instantiation with word-level inversion approach [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-bv-interleave-value":{
+    "prefix": "--",
+    "description": "do not interleave model value instantiation with word-level inversion approach [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-bv-ineq=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "choose mode for handling bit-vector inequalities with counterexample-guided instantiation",
+    "defaultValue": "all"
+  },
+  "cbqi-bv-rm-extract":{
+    "prefix": "--",
+    "description": "replaces extract terms with variables for counterexample-guided instantiation for bit-vectors [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-bv-rm-extract":{
+    "prefix": "--",
+    "description": "do not replaces extract terms with variables for counterexample-guided instantiation for bit-vectors [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-bv-linear":{
+    "prefix": "--",
+    "description": "linearize adder chains for variables [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-bv-linear":{
+    "prefix": "--",
+    "description": "do not linearize adder chains for variables [*]",
+    "defaultValue": ""
+  },
+
+  "cbqi-bv-concat-inv":{
+    "prefix": "--",
+    "description": "compute inverse for concat over equalities rather than producing an invertibility condition [*]",
+    "defaultValue": ""
+  },
+
+  "no-cbqi-bv-concat-inv":{
+    "prefix": "--",
+    "description": "do not compute inverse for concat over equalities rather than producing an invertibility condition [*]",
+    "defaultValue": ""
+  },
+
+  "local-t-ext":{
+    "prefix": "--",
+    "description": "do instantiation based on local theory extensions [*]",
+    "defaultValue": ""
+  },
+
+  "no-local-t-ext":{
+    "prefix": "--",
+    "description": "do not do instantiation based on local theory extensions [*]",
+    "defaultValue": ""
+  },
+
+  "lte-partial-inst":{
+    "prefix": "--",
+    "description": "partially instantiate local theory quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "no-lte-partial-inst":{
+    "prefix": "--",
+    "description": "do not partially instantiate local theory quantifiers [*]",
+    "defaultValue": ""
+  },
+
+  "lte-restrict-inst-closure":{
+    "prefix": "--",
+    "description": "treat arguments of inst closure as restricted terms for instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-lte-restrict-inst-closure":{
+    "prefix": "--",
+    "description": "do not treat arguments of inst closure as restricted terms for instantiation [*]",
+    "defaultValue": ""
+  },
+
+  "quant-alpha-equiv":{
+    "prefix": "--",
+    "description": "infer alpha equivalence between quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-alpha-equiv":{
+    "prefix": "--",
+    "description": "do not infer alpha equivalence between quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "macros-quant":{
+    "prefix": "--",
+    "description": "perform quantifiers macro expansion [*]",
+    "defaultValue": ""
+  },
+
+  "no-macros-quant":{
+    "prefix": "--",
+    "description": "do not perform quantifiers macro expansion [*]",
+    "defaultValue": ""
+  },
+
+  "macros-quant-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for quantifiers macro expansion",
+    "defaultValue": "all"
+  },
+  "quant-dsplit-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for dynamic quantifiers splitting",
+    "defaultValue": "all"
+  },
+  "quant-anti-skolem":{
+    "prefix": "--",
+    "description": "perform anti-skolemization for quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-anti-skolem":{
+    "prefix": "--",
+    "description": "do not perform anti-skolemization for quantified formulas [*]",
+    "defaultValue": ""
+  },
+
+  "quant-ee":{
+    "prefix": "--",
+    "description": "maintain congrunce closure over universal equalities [*]",
+    "defaultValue": ""
+  },
+
+  "no-quant-ee":{
+    "prefix": "--",
+    "description": "do not maintain congrunce closure over universal equalities [*]",
+    "defaultValue": ""
+  },
+
+  "ho-matching":{
+    "prefix": "--",
+    "description": "do higher-order matching algorithm for triggers with variable operators [*]",
+    "defaultValue": ""
+  },
+
+  "no-ho-matching":{
+    "prefix": "--",
+    "description": "do not do higher-order matching algorithm for triggers with variable operators [*]",
+    "defaultValue": ""
+  },
+
+  "ho-matching-var-priority":{
+    "prefix": "--",
+    "description": "give priority to variable arguments over constant arguments [*]",
+    "defaultValue": ""
+  },
+
+  "no-ho-matching-var-priority":{
+    "prefix": "--",
+    "description": "do not give priority to variable arguments over constant arguments [*]",
+    "defaultValue": ""
+  },
+
+  "ho-merge-term-db":{
+    "prefix": "--",
+    "description": "merge term indices modulo equality [*]",
+    "defaultValue": ""
+  },
+
+  "no-ho-merge-term-db":{
+    "prefix": "--",
+    "description": "do not merge term indices modulo equality [*]",
+    "defaultValue": ""
+  },
+
+  "track-inst-lemmas":{
+    "prefix": "--",
+    "description": "track instantiation lemmas (for proofs, unsat cores, qe and synthesis minimization) [*] From the Sep module:",
+    "defaultValue": ""
+  },
+
+  "no-track-inst-lemmas":{
+    "prefix": "--",
+    "description": "do not track instantiation lemmas (for proofs, unsat cores, qe and synthesis minimization) [*] From the Sep module:",
+    "defaultValue": ""
+  },
+
+  "sep-check-neg":{
+    "prefix": "--",
+    "description": "check negated spatial assertions [*]",
+    "defaultValue": ""
+  },
+
+  "no-sep-check-neg":{
+    "prefix": "--",
+    "description": "do not check negated spatial assertions [*]",
+    "defaultValue": ""
+  },
+
+  "sep-exp":{
+    "prefix": "--",
+    "description": "experimental flag for sep [*]",
+    "defaultValue": ""
+  },
+
+  "no-sep-exp":{
+    "prefix": "--",
+    "description": "do not experimental flag for sep [*]",
+    "defaultValue": ""
+  },
+
+  "sep-min-refine":{
+    "prefix": "--",
+    "description": "only add refinement lemmas for minimal (innermost) assertions [*]",
+    "defaultValue": ""
+  },
+
+  "no-sep-min-refine":{
+    "prefix": "--",
+    "description": "do not only add refinement lemmas for minimal (innermost) assertions [*]",
+    "defaultValue": ""
+  },
+
+  "sep-deq-c":{
+    "prefix": "--",
+    "description": "assume cardinality elements are distinct [*]",
+    "defaultValue": ""
+  },
+
+  "no-sep-deq-c":{
+    "prefix": "--",
+    "description": "do not assume cardinality elements are distinct [*]",
+    "defaultValue": ""
+  },
+
+  "sep-pre-skolem-emp":{
+    "prefix": "--",
+    "description": "eliminate emp constraint at preprocess time [*]",
+    "defaultValue": ""
+  },
+
+  "no-sep-pre-skolem-emp":{
+    "prefix": "--",
+    "description": "do not eliminate emp constraint at preprocess time [*]",
+    "defaultValue": ""
+  },
+
+  "sep-child-refine":{
+    "prefix": "--",
+    "description": "child-specific refinements of negated star, positive wand [*] From the Sets module:",
+    "defaultValue": ""
+  },
+
+  "no-sep-child-refine":{
+    "prefix": "--",
+    "description": "do not child-specific refinements of negated star, positive wand [*] From the Sets module:",
+    "defaultValue": ""
+  },
+
+  "sets-proxy-lemmas":{
+    "prefix": "--",
+    "description": "introduce proxy variables eagerly to shorten lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sets-proxy-lemmas":{
+    "prefix": "--",
+    "description": "do not introduce proxy variables eagerly to shorten lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sets-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "send inferences as lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-sets-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "do not send inferences as lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "sets-rel-eager":{
+    "prefix": "--",
+    "description": "standard effort checks for relations [*]",
+    "defaultValue": ""
+  },
+
+  "no-sets-rel-eager":{
+    "prefix": "--",
+    "description": "do not standard effort checks for relations [*]",
+    "defaultValue": ""
+  },
+
+  "sets-ext":{
+    "prefix": "--",
+    "description": "enable extended symbols such as complement and universe in theory of sets [*]",
+    "defaultValue": ""
+  },
+
+  "no-sets-ext":{
+    "prefix": "--",
+    "description": "do not enable extended symbols such as complement and universe in theory of sets [*]",
+    "defaultValue": ""
+  },
+
+  "force-logic=LOGIC": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "set the logic, and override all further user attempts to change it (EXPERTS only)",
+    "defaultValue": "all"
+  },
+  "simplification=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "choose simplification mode, see --simplification=help",
+    "defaultValue": "all"
+  },
+  "no-simplification": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "turn off all simplification (same as",
+    "defaultValue": "0"
+  },
+  "simplification=none)": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "simplification=none)",
+    "defaultValue": "all"
+  },
+  "static-learning":{
+    "prefix": "--",
+    "description": "use static learning (on by default) [*]",
+    "defaultValue": ""
+  },
+
+  "no-static-learning":{
+    "prefix": "--",
+    "description": "do not use static learning (on by default) [*]",
+    "defaultValue": ""
+  },
+
+  "check-models":{
+    "prefix": "--",
+    "description": "after SAT/INVALID/UNKNOWN, check that the generated model satisfies user assertions [*]",
+    "defaultValue": ""
+  },
+
+  "no-check-models":{
+    "prefix": "--",
+    "description": "do not after SAT/INVALID/UNKNOWN, check that the generated model satisfies user assertions [*]",
+    "defaultValue": ""
+  },
+
+  "dump-models":{
+    "prefix": "--",
+    "description": "output models after every SAT/INVALID/UNKNOWN response [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-models":{
+    "prefix": "--",
+    "description": "do not output models after every SAT/INVALID/UNKNOWN response [*]",
+    "defaultValue": ""
+  },
+
+  "omit-dont-cares":{
+    "prefix": "--",
+    "description": "When producing a model, omit variables whose value does not matter [*]",
+    "defaultValue": ""
+  },
+
+  "no-omit-dont-cares":{
+    "prefix": "--",
+    "description": "do not When producing a model, omit variables whose value does not matter [*]",
+    "defaultValue": ""
+  },
+
+  "proof":{
+    "prefix": "--",
+    "description": "turn on proof generation [*]",
+    "defaultValue": ""
+  },
+
+  "no-proof":{
+    "prefix": "--",
+    "description": "do not turn on proof generation [*]",
+    "defaultValue": ""
+  },
+
+  "check-proofs":{
+    "prefix": "--",
+    "description": "after UNSAT/VALID, machine-check the generated proof [*]",
+    "defaultValue": ""
+  },
+
+  "no-check-proofs":{
+    "prefix": "--",
+    "description": "do not after UNSAT/VALID, machine-check the generated proof [*]",
+    "defaultValue": ""
+  },
+
+  "dump-proofs":{
+    "prefix": "--",
+    "description": "output proofs after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-proofs":{
+    "prefix": "--",
+    "description": "do not output proofs after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "dump-instantiations":{
+    "prefix": "--",
+    "description": "output instantiations of quantified formulas after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-instantiations":{
+    "prefix": "--",
+    "description": "do not output instantiations of quantified formulas after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "sygus-out=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "output mode for sygus",
+    "defaultValue": "all"
+  },
+  "sygus-print-callbacks":{
+    "prefix": "--",
+    "description": "use sygus print callbacks to print sygus terms in the user-provided form (disable for debugging) [*]",
+    "defaultValue": ""
+  },
+
+  "no-sygus-print-callbacks":{
+    "prefix": "--",
+    "description": "do not use sygus print callbacks to print sygus terms in the user-provided form (disable for debugging) [*]",
+    "defaultValue": ""
+  },
+
+  "dump-synth":{
+    "prefix": "--",
+    "description": "output solution for synthesis conjectures after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-synth":{
+    "prefix": "--",
+    "description": "do not output solution for synthesis conjectures after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "produce-unsat-cores":{
+    "prefix": "--",
+    "description": "turn on unsat core generation [*]",
+    "defaultValue": ""
+  },
+
+  "no-produce-unsat-cores":{
+    "prefix": "--",
+    "description": "do not turn on unsat core generation [*]",
+    "defaultValue": ""
+  },
+
+  "check-unsat-cores":{
+    "prefix": "--",
+    "description": "after UNSAT/VALID, produce and check an unsat core (expensive) [*]",
+    "defaultValue": ""
+  },
+
+  "no-check-unsat-cores":{
+    "prefix": "--",
+    "description": "do not after UNSAT/VALID, produce and check an unsat core (expensive) [*]",
+    "defaultValue": ""
+  },
+
+  "dump-unsat-cores":{
+    "prefix": "--",
+    "description": "output unsat cores after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-unsat-cores":{
+    "prefix": "--",
+    "description": "do not output unsat cores after every UNSAT/VALID response [*]",
+    "defaultValue": ""
+  },
+
+  "dump-unsat-cores-full":{
+    "prefix": "--",
+    "description": "dump the full unsat core, including unlabeled assertions [*]",
+    "defaultValue": ""
+  },
+
+  "no-dump-unsat-cores-full":{
+    "prefix": "--",
+    "description": "do not dump the full unsat core, including unlabeled assertions [*]",
+    "defaultValue": ""
+  },
+
+  "produce-unsat-assumptions":{
+    "prefix": "--",
+    "description": "turn on unsat assumptions generation [*]",
+    "defaultValue": ""
+  },
+
+  "no-produce-unsat-assumptions":{
+    "prefix": "--",
+    "description": "do not turn on unsat assumptions generation [*]",
+    "defaultValue": ""
+  },
+
+  "check-synth-sol":{
+    "prefix": "--",
+    "description": "checks whether produced solutions to functions-to-synthesize satisfy the conjecture [*]",
+    "defaultValue": ""
+  },
+
+  "no-check-synth-sol":{
+    "prefix": "--",
+    "description": "do not checks whether produced solutions to functions-to-synthesize satisfy the conjecture [*]",
+    "defaultValue": ""
+  },
+
+  "produce-assignments":{
+    "prefix": "--",
+    "description": "support the get-assignment command [*]",
+    "defaultValue": ""
+  },
+
+  "no-produce-assignments":{
+    "prefix": "--",
+    "description": "do not support the get-assignment command [*]",
+    "defaultValue": ""
+  },
+
+  "ite-simp":{
+    "prefix": "--",
+    "description": "turn on ite simplification (Kim (and Somenzi) et al., SAT 2009) [*]",
+    "defaultValue": ""
+  },
+
+  "no-ite-simp":{
+    "prefix": "--",
+    "description": "do not turn on ite simplification (Kim (and Somenzi) et al., SAT 2009) [*]",
+    "defaultValue": ""
+  },
+
+  "on-repeat-ite-simp":{
+    "prefix": "--",
+    "description": "do the ite simplification pass again if repeating simplification [*]",
+    "defaultValue": ""
+  },
+
+  "no-on-repeat-ite-simp":{
+    "prefix": "--",
+    "description": "do not do the ite simplification pass again if repeating simplification [*]",
+    "defaultValue": ""
+  },
+
+  "ext-rew-prep":{
+    "prefix": "--",
+    "description": "use extended rewriter as a preprocessing pass [*]",
+    "defaultValue": ""
+  },
+
+  "no-ext-rew-prep":{
+    "prefix": "--",
+    "description": "do not use extended rewriter as a preprocessing pass [*]",
+    "defaultValue": ""
+  },
+
+  "ext-rew-prep-agg":{
+    "prefix": "--",
+    "description": "use aggressive extended rewriter as a preprocessing pass [*]",
+    "defaultValue": ""
+  },
+
+  "no-ext-rew-prep-agg":{
+    "prefix": "--",
+    "description": "do not use aggressive extended rewriter as a preprocessing pass [*]",
+    "defaultValue": ""
+  },
+
+  "simp-with-care":{
+    "prefix": "--",
+    "description": "enables simplifyWithCare in ite simplificiation [*]",
+    "defaultValue": ""
+  },
+
+  "no-simp-with-care":{
+    "prefix": "--",
+    "description": "do not enables simplifyWithCare in ite simplificiation [*]",
+    "defaultValue": ""
+  },
+
+  "simp-ite-compress":{
+    "prefix": "--",
+    "description": "enables compressing ites after ite simplification [*]",
+    "defaultValue": ""
+  },
+
+  "no-simp-ite-compress":{
+    "prefix": "--",
+    "description": "do not enables compressing ites after ite simplification [*]",
+    "defaultValue": ""
+  },
+
+  "unconstrained-simp":{
+    "prefix": "--",
+    "description": "turn on unconstrained simplification (see Bruttomesso/Brummayer PhD thesis) [*]",
+    "defaultValue": ""
+  },
+
+  "no-unconstrained-simp":{
+    "prefix": "--",
+    "description": "do not turn on unconstrained simplification (see Bruttomesso/Brummayer PhD thesis) [*]",
+    "defaultValue": ""
+  },
+
+  "repeat-simp":{
+    "prefix": "--",
+    "description": "make multiple passes with nonclausal simplifier [*]",
+    "defaultValue": ""
+  },
+
+  "no-repeat-simp":{
+    "prefix": "--",
+    "description": "do not make multiple passes with nonclausal simplifier [*]",
+    "defaultValue": ""
+  },
+
+  "simp-ite-hunt-zombies": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "post ite compression enables zombie removal while the number of nodes is above this threshold",
+    "defaultValue": "0"
+  },
+  "sort-inference":{
+    "prefix": "--",
+    "description": "calculate sort inference of input problem, convert the input based on monotonic sorts [*]",
+    "defaultValue": ""
+  },
+
+  "no-sort-inference":{
+    "prefix": "--",
+    "description": "do not calculate sort inference of input problem, convert the input based on monotonic sorts [*]",
+    "defaultValue": ""
+  },
+
+  "abstract-values":{
+    "prefix": "--",
+    "description": "in models, output arrays (and in future, maybe others) using abstract values, as required by the SMT-LIB standard [*]",
+    "defaultValue": ""
+  },
+
+  "no-abstract-values":{
+    "prefix": "--",
+    "description": "do not in models, output arrays (and in future, maybe others) using abstract values, as required by the SMT-LIB standard [*]",
+    "defaultValue": ""
+  },
+
+  "model-u-dt-enum":{
+    "prefix": "--",
+    "description": "in models, output uninterpreted sorts as datatype enumerations [*]",
+    "defaultValue": ""
+  },
+
+  "no-model-u-dt-enum":{
+    "prefix": "--",
+    "description": "do not in models, output uninterpreted sorts as datatype enumerations [*]",
+    "defaultValue": ""
+  },
+
+  "rewrite-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each rewrite step (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "theory-check-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each theory check call (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "decision-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of getNext decision calls in the decision engine (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "bitblast-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each bitblast step (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "parse-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each command/expression parsing (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "lemma-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent when adding lemmas (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "restart-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each theory restart (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "cnf-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each call to cnf conversion (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "preprocess-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each preprocessing step in SmtEngine (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "quantifier-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for quantifier instantiations (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "sat-conflict-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each sat conflict (main sat solver) (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "bv-sat-conflict-step": {
+    "type": "int",
+    "prefix": "--",
+    "min": -2147483648,
+    "max": 2147483647,
+    "description": "amount of resources spent for each sat conflict (bitvectors) (EXPERTS only)",
+    "defaultValue": "0"
+  },
+  "rewrite-apply-to-const":{
+    "prefix": "--",
+    "description": "eliminate function applications, rewriting e.g. f(5) to a new symbol f_5 (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "no-rewrite-apply-to-const":{
+    "prefix": "--",
+    "description": "do not eliminate function applications, rewriting e.g. f(5) to a new symbol f_5 (EXPERTS only) [*]",
+    "defaultValue": ""
+  },
+
+  "force-no-limit-cpu-while-dump":{
+    "prefix": "--",
+    "description": "Force no CPU limit when dumping models and proofs [*]",
+    "defaultValue": ""
+  },
+
+  "no-force-no-limit-cpu-while-dump":{
+    "prefix": "--",
+    "description": "do not Force no CPU limit when dumping models and proofs [*]",
+    "defaultValue": ""
+  },
+
+  "strings-exp":{
+    "prefix": "--",
+    "description": "experimental features in the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-exp":{
+    "prefix": "--",
+    "description": "do not experimental features in the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "strings-lb=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "the strategy of LB rule application: 0-lazy, 1-eager, 2-no",
+    "defaultValue": "all"
+  },
+  "strings-std-ascii":{
+    "prefix": "--",
+    "description": "the alphabet contains only characters from the standard ASCII or the extended one [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-std-ascii":{
+    "prefix": "--",
+    "description": "do not the alphabet contains only characters from the standard ASCII or the extended one [*]",
+    "defaultValue": ""
+  },
+
+  "strings-fmf":{
+    "prefix": "--",
+    "description": "the finite model finding used by the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-fmf":{
+    "prefix": "--",
+    "description": "do not the finite model finding used by the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "strings-eager":{
+    "prefix": "--",
+    "description": "strings eager check [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-eager":{
+    "prefix": "--",
+    "description": "do not strings eager check [*]",
+    "defaultValue": ""
+  },
+
+  "strings-eit":{
+    "prefix": "--",
+    "description": "the eager intersection used by the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-eit":{
+    "prefix": "--",
+    "description": "do not the eager intersection used by the theory of strings [*]",
+    "defaultValue": ""
+  },
+
+  "strings-opt1":{
+    "prefix": "--",
+    "description": "internal option1 for strings: normal form [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-opt1":{
+    "prefix": "--",
+    "description": "do not internal option1 for strings: normal form [*]",
+    "defaultValue": ""
+  },
+
+  "strings-opt2":{
+    "prefix": "--",
+    "description": "internal option2 for strings: constant regexp splitting [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-opt2":{
+    "prefix": "--",
+    "description": "do not internal option2 for strings: constant regexp splitting [*]",
+    "defaultValue": ""
+  },
+
+  "strings-inm":{
+    "prefix": "--",
+    "description": "internal for strings: ignore negative membership constraints (fragment checking is needed, left to users for now) [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-inm":{
+    "prefix": "--",
+    "description": "do not internal for strings: ignore negative membership constraints (fragment checking is needed, left to users for now) [*]",
+    "defaultValue": ""
+  },
+
+  "strings-lazy-pp":{
+    "prefix": "--",
+    "description": "perform string preprocessing lazily [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-lazy-pp":{
+    "prefix": "--",
+    "description": "do not perform string preprocessing lazily [*]",
+    "defaultValue": ""
+  },
+
+  "strings-len-geqz":{
+    "prefix": "--",
+    "description": "strings length greater than zero lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-len-geqz":{
+    "prefix": "--",
+    "description": "do not strings length greater than zero lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "strings-len-norm":{
+    "prefix": "--",
+    "description": "strings length normalization lemma [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-len-norm":{
+    "prefix": "--",
+    "description": "do not strings length normalization lemma [*]",
+    "defaultValue": ""
+  },
+
+  "strings-sp-emp":{
+    "prefix": "--",
+    "description": "strings split on empty string [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-sp-emp":{
+    "prefix": "--",
+    "description": "do not strings split on empty string [*]",
+    "defaultValue": ""
+  },
+
+  "strings-infer-sym":{
+    "prefix": "--",
+    "description": "strings split on empty string [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-infer-sym":{
+    "prefix": "--",
+    "description": "do not strings split on empty string [*]",
+    "defaultValue": ""
+  },
+
+  "strings-eager-len":{
+    "prefix": "--",
+    "description": "strings eager length lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-eager-len":{
+    "prefix": "--",
+    "description": "do not strings eager length lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "strings-check-entail-len":{
+    "prefix": "--",
+    "description": "check entailment between length terms to reduce splitting [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-check-entail-len":{
+    "prefix": "--",
+    "description": "do not check entailment between length terms to reduce splitting [*]",
+    "defaultValue": ""
+  },
+
+  "strings-process-loop":{
+    "prefix": "--",
+    "description": "reduce looping word equations to regular expressions [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-process-loop":{
+    "prefix": "--",
+    "description": "do not reduce looping word equations to regular expressions [*]",
+    "defaultValue": ""
+  },
+
+  "strings-abort-loop":{
+    "prefix": "--",
+    "description": "abort when a looping word equation is encountered [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-abort-loop":{
+    "prefix": "--",
+    "description": "do not abort when a looping word equation is encountered [*]",
+    "defaultValue": ""
+  },
+
+  "strings-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "always send lemmas out instead of making internal inferences [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-infer-as-lemmas":{
+    "prefix": "--",
+    "description": "do not always send lemmas out instead of making internal inferences [*]",
+    "defaultValue": ""
+  },
+
+  "strings-rexplain-lemmas":{
+    "prefix": "--",
+    "description": "regression explanations for string lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-rexplain-lemmas":{
+    "prefix": "--",
+    "description": "do not regression explanations for string lemmas [*]",
+    "defaultValue": ""
+  },
+
+  "strings-min-prefix-explain":{
+    "prefix": "--",
+    "description": "minimize explanations for prefix of normal forms in strings [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-min-prefix-explain":{
+    "prefix": "--",
+    "description": "do not minimize explanations for prefix of normal forms in strings [*]",
+    "defaultValue": ""
+  },
+
+  "strings-guess-model":{
+    "prefix": "--",
+    "description": "use model guessing to avoid string extended function reductions [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-guess-model":{
+    "prefix": "--",
+    "description": "do not use model guessing to avoid string extended function reductions [*]",
+    "defaultValue": ""
+  },
+
+  "strings-uf-reduct":{
+    "prefix": "--",
+    "description": "use uninterpreted functions when applying extended function reductions [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-uf-reduct":{
+    "prefix": "--",
+    "description": "do not use uninterpreted functions when applying extended function reductions [*]",
+    "defaultValue": ""
+  },
+
+  "strings-binary-csp":{
+    "prefix": "--",
+    "description": "use binary search when splitting strings [*]",
+    "defaultValue": ""
+  },
+
+  "no-strings-binary-csp":{
+    "prefix": "--",
+    "description": "do not use binary search when splitting strings [*]",
+    "defaultValue": ""
+  },
+
+  "strings-lprop-csp":{
+    "prefix": "--",
+    "description": "do length propagation based on constant splits [*] From the Theory layer module:",
+    "defaultValue": ""
+  },
+
+  "no-strings-lprop-csp":{
+    "prefix": "--",
+    "description": "do not do length propagation based on constant splits [*] From the Theory layer module:",
+    "defaultValue": ""
+  },
+
+  "theoryof-mode=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode for Theory::theoryof() (EXPERTS only)",
+    "defaultValue": "all"
+  },
+  "use-theory=NAME": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "use alternate theory implementation NAME (--use-theory=help for a list). This option may be repeated or a comma separated list.",
+    "defaultValue": "all"
+  },
+  "symmetry-breaker":{
+    "prefix": "--",
+    "description": "use UF symmetry breaker (Deharbe et al., CADE 2011) [*]",
+    "defaultValue": ""
+  },
+
+  "no-symmetry-breaker":{
+    "prefix": "--",
+    "description": "do not use UF symmetry breaker (Deharbe et al., CADE 2011) [*]",
+    "defaultValue": ""
+  },
+
+  "condense-function-values":{
+    "prefix": "--",
+    "description": "condense models for functions rather than explicitly representing them [*]",
+    "defaultValue": ""
+  },
+
+  "no-condense-function-values":{
+    "prefix": "--",
+    "description": "do not condense models for functions rather than explicitly representing them [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-regions":{
+    "prefix": "--",
+    "description": "disable region-based method for discovering cliques and splits in uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-regions":{
+    "prefix": "--",
+    "description": "do not disable region-based method for discovering cliques and splits in uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-eager-split":{
+    "prefix": "--",
+    "description": "add splits eagerly for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-eager-split":{
+    "prefix": "--",
+    "description": "do not add splits eagerly for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-totality":{
+    "prefix": "--",
+    "description": "always use totality axioms for enforcing cardinality constraints [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-totality":{
+    "prefix": "--",
+    "description": "do not always use totality axioms for enforcing cardinality constraints [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-totality-limited=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "apply totality axioms, but only up to cardinality N (-1 == do not apply totality axioms, default)",
+    "defaultValue": "all"
+  },
+  "uf-ss-totality-sym-break":{
+    "prefix": "--",
+    "description": "apply symmetry breaking for totality axioms [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-totality-sym-break":{
+    "prefix": "--",
+    "description": "do not apply symmetry breaking for totality axioms [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-abort-card=N": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "tells the uf strong solver to only consider models that interpret uninterpreted sorts of cardinality at most N (-1 == no limit, default)",
+    "defaultValue": "all"
+  },
+  "uf-ss-explained-cliques":{
+    "prefix": "--",
+    "description": "use explained clique lemmas for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-explained-cliques":{
+    "prefix": "--",
+    "description": "do not use explained clique lemmas for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-simple-cliques":{
+    "prefix": "--",
+    "description": "always use simple clique lemmas for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-simple-cliques":{
+    "prefix": "--",
+    "description": "do not always use simple clique lemmas for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-deq-prop":{
+    "prefix": "--",
+    "description": "eagerly propagate disequalities for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-deq-prop":{
+    "prefix": "--",
+    "description": "do not eagerly propagate disequalities for uf strong solver [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss=MODE": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+    ],
+    "description": "mode of operation for uf strong solver.",
+    "defaultValue": "all"
+  },
+  "uf-ss-clique-splits":{
+    "prefix": "--",
+    "description": "use cliques instead of splitting on demand to shrink model [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-clique-splits":{
+    "prefix": "--",
+    "description": "do not use cliques instead of splitting on demand to shrink model [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-sym-break":{
+    "prefix": "--",
+    "description": "finite model finding symmetry breaking techniques [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-sym-break":{
+    "prefix": "--",
+    "description": "do not finite model finding symmetry breaking techniques [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-fair":{
+    "prefix": "--",
+    "description": "use fair strategy for finite model finding multiple sorts [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-fair":{
+    "prefix": "--",
+    "description": "do not use fair strategy for finite model finding multiple sorts [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ss-fair-monotone":{
+    "prefix": "--",
+    "description": "group monotone sorts when enforcing fairness for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ss-fair-monotone":{
+    "prefix": "--",
+    "description": "do not group monotone sorts when enforcing fairness for finite model finding [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ho":{
+    "prefix": "--",
+    "description": "enable support for higher-order reasoning [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ho":{
+    "prefix": "--",
+    "description": "do not enable support for higher-order reasoning [*]",
+    "defaultValue": ""
+  },
+
+  "uf-ho-ext":{
+    "prefix": "--",
+    "description": "apply extensionality on function symbols [*]",
+    "defaultValue": ""
+  },
+
+  "no-uf-ho-ext":{
+    "prefix": "--",
+    "description": "do not apply extensionality on function symbols [*]",
     "defaultValue": ""
   }
 }
