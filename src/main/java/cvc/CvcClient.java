@@ -117,9 +117,6 @@ public class CvcClient
                 randomAccessFile.setLength(0);
             }
 
-            Runtime runtime = Runtime.getRuntime();
-            runtime.exec(command, new String[] {CvcContext.cvcPath});
-
             ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
             processBuilder.redirectOutput(resultsFile);
             processBuilder.redirectError(errorsFile);
