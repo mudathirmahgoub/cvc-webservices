@@ -51,6 +51,9 @@ public class CvcContext implements ServletContextListener
     public static String jobsDirectory;
     public static String examplesDirectory;
 
+    public static String softTimeout; // milliseconds
+    public static int hardTimeout; // milliseconds
+
     public static final ConcurrentMap<String, Future<Void>> runningTasks =
             new ConcurrentHashMap<>();
 
@@ -96,6 +99,9 @@ public class CvcContext implements ServletContextListener
             cvcCommand = configurations.get("cvcCommand");
             maxThreads = Integer.parseInt(configurations.get("maxThreads"));
             cvcExecutorService = newFixedThreadPool(maxThreads);
+
+            softTimeout = configurations.get("softTimeout");
+            hardTimeout = Integer.parseInt(configurations.get("hardTimeout"));
         }
         catch (IOException exception)
         {

@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 import java.util.Formatter;
 import java.util.List;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Eric, Mingyu
@@ -93,6 +94,12 @@ public class CvcClient
             command += " " + argument;
         }
 
+        // handle the timeout argument
+        if(!args.contains(Constants.timeoutArgument))
+        {
+            command += " " + Constants.timeoutArgument + " " + CvcContext.softTimeout;
+        }
+
         System.out.println(command);
 
         try
@@ -117,6 +124,8 @@ public class CvcClient
             processBuilder.redirectOutput(resultsFile);
             processBuilder.redirectError(errorsFile);
             Process process = processBuilder.start();
+            process.waitFor(CvcContext.hardTimeout, TimeUnit.MILLISECONDS);
+            process.destroyForcibly();
             process.waitFor();
         }
         catch (Exception e)

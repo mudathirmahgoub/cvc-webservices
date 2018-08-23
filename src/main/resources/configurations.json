@@ -2,5 +2,7 @@
 	"cvcPath": "",
 	"jobsDirectory": "jobs",
 	"cvcCommand": "/usr/local/bin/cvc4 {0}/{1}",
-	"maxThreads": "24"
+	"maxThreads": "24",
+	"softTimeout": "60000",
+	"hardTimeout": "90000"
 }
