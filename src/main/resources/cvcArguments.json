@@ -1028,7 +1028,7 @@
     "defaultValue": ""
   },
 
-  "bv-eq-slicer=MODE": {
+  "bv-eq-slicer": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
@@ -1459,7 +1459,7 @@
     "description": "tells enumerative sygus to only consider solutions up to term size N (-1 == no limit, default)",
     "defaultValue": "0"
   },
-  "decision=MODE": {
+  "decision": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
@@ -1709,7 +1709,7 @@
     "description": "",
     "defaultValue": ""
   },
-  "inst-format=MODE": {
+  "inst-format": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
@@ -2074,7 +2074,7 @@
 
   "no-cond-rewrite-quant":{
     "prefix": "--",
-    "description": "do not conditional rewriting of quantified formulas [*]",
+    "description": "no conditional rewriting of quantified formulas [*]",
     "defaultValue": ""
   },
 
@@ -2092,24 +2092,33 @@
 
   "e-matching":{
     "prefix": "--",
-    "description": "whether to do heuristic E-matching [*]",
+    "description": "heuristic E-matching [*]",
     "defaultValue": ""
   },
 
   "no-e-matching":{
     "prefix": "--",
-    "description": "do not whether to do heuristic E-matching [*]",
+    "description": "no heuristic E-matching [*]",
     "defaultValue": ""
   },
 
   "term-db-mode": {
-    "type": "int",
+    "type": "string",
     "prefix": "--",
-    "min": -2147483648,
-    "max": 2147483647,
+    "allowedValues": [
+      "all",
+      "relevant"
+    ],
     "description": "which ground terms to consider for instantiation",
-    "defaultValue": "0"
+    "defaultValue": "all"
   },
+
+  "term-db-mode=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+
   "register-quant-body-terms":{
     "prefix": "--",
     "description": "consider ground terms within bodies of quantified formulas for matching [*]",
@@ -2184,13 +2193,13 @@
 
   "purify-triggers":{
     "prefix": "--",
-    "description": "purify triggers, e.g. f( x+1 ) becomes f( y ), x mapsto y-1 [*]",
+    "description": "purify triggers, e.g. f( x+1 ) becomes f( y ), x maps to y-1 [*]",
     "defaultValue": ""
   },
 
   "no-purify-triggers":{
     "prefix": "--",
-    "description": "do not purify triggers, e.g. f( x+1 ) becomes f( y ), x mapsto y-1 [*]",
+    "description": "do not purify triggers, e.g. f( x+1 ) becomes f( y ), x maps to y-1 [*]",
     "defaultValue": ""
   },
 
@@ -2262,7 +2271,7 @@
 
   "no-multi-trigger-cache":{
     "prefix": "--",
-    "description": "do not caching version of multi triggers [*]",
+    "description": "no caching version of multi triggers [*]",
     "defaultValue": ""
   },
 
@@ -2274,33 +2283,61 @@
 
   "no-multi-trigger-linear":{
     "prefix": "--",
-    "description": "do not implementation of multi triggers where maximum number of instantiations is linear wrt number of ground terms [*]",
+    "description": "no implementation of multi triggers where maximum number of instantiations is linear wrt number of ground terms [*]",
     "defaultValue": ""
   },
 
   "trigger-sel": {
-    "type": "int",
-    "prefix": "--",
-    "min": -2147483648,
-    "max": 2147483647,
-    "description": "selection mode for triggers",
-    "defaultValue": "0"
-  },
-  "trigger-active-sel": {
-    "type": "int",
-    "prefix": "--",
-    "min": -2147483648,
-    "max": 2147483647,
-    "description": "selection mode to activate triggers",
-    "defaultValue": "0"
-  },
-  "user-pat=MODE": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "min",
+      "max",
+      "all",
+      "min-s-max",
+      "min-s-all"
+    ],
+    "description": "selection mode for triggers",
+    "defaultValue": "min"
+  },
+  "trigger-sel=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "trigger-active-sel": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "all",
+      "min",
+      "max"
+    ],
+    "description": "selection mode for triggers",
+    "defaultValue": "all"
+  },
+  "trigger-active-sel=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "user-pat": {
+    "type": "string",
+    "prefix": "--",
+    "allowedValues": [
+      "trust",
+      "use",
+      "resort",
+      "ignore",
+      "interleave"
     ],
     "description": "policy for handling user-provided patterns for quantifier instantiation",
-    "defaultValue": "all"
+    "defaultValue": "trust"
+  },
+  "user-pat=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "increment-triggers":{
     "prefix": "--",
@@ -2314,13 +2351,23 @@
     "defaultValue": ""
   },
 
-  "inst-when=MODE": {
+  "inst-when": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "full-last-call",
+      "full",
+      "full-delay",
+      "full-delay-last-call",
+      "last-call"
     ],
     "description": "when to apply instantiation",
-    "defaultValue": "all"
+    "defaultValue": "full-last-call"
+  },
+  "inst-when=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "inst-when-strict-interleave":{
     "prefix": "--",
@@ -2386,13 +2433,21 @@
     "defaultValue": ""
   },
 
-  "quant-rep-mode=MODE": {
+  "quant-rep-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "ee",
+      "first",
+      "depth"
     ],
     "description": "selection mode for representatives in quantifiers engine",
-    "defaultValue": "all"
+    "defaultValue": "first"
+  },
+  "quant-rep-mode=help": {
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "inst-rlv-cond":{
     "prefix": "--",
