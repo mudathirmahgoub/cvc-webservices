@@ -928,7 +928,7 @@
     "defaultValue": ""
   },
 
-  "trace=TAG": {
+  "trace": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
@@ -936,12 +936,22 @@
     "description": "trace something (e.g. -t pushpop), can repeat",
     "defaultValue": ""
   },
-  "debug=TAG": {
+  "trace=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "debug": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
     ],
     "description": "debug something (e.g. -d arith), can repeat",
+    "defaultValue": ""
+  },
+  "debug=help":{
+    "prefix": "--",
+    "description": "",
     "defaultValue": ""
   },
   "print-success":{
@@ -1457,7 +1467,7 @@
     "min": -2147483648,
     "max": 2147483647,
     "description": "tells enumerative sygus to only consider solutions up to term size N (-1 == no limit, default)",
-    "defaultValue": "0"
+    "defaultValue": "-1"
   },
   "decision": {
     "type": "string",
@@ -1503,7 +1513,7 @@
     "description": "assign random weights to nodes between 0 and N-1 (0: disable) (EXPERTS only)",
     "defaultValue": "0"
   },
-  "decision-weight-internal=HOW": {
+  "decision-weight-internal": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
@@ -2381,13 +2391,13 @@
     "defaultValue": ""
   },
 
-  "inst-when-phase=N": {
-    "type": "string",
+  "inst-when-phase": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "instantiation rounds quantifiers takes (>=1) before allowing theory combination to happen",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "inst-when-tc-first":{
     "prefix": "--",
@@ -2413,13 +2423,13 @@
     "defaultValue": ""
   },
 
-  "inst-max-level=N": {
-    "type": "string",
+  "inst-max-level": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "maximum inst level of terms used to instantiate quantified formulas with (-1 == no limit, default)",
-    "defaultValue": "all"
+    "defaultValue": "-1"
   },
   "inst-level-input-only":{
     "prefix": "--",
@@ -2497,13 +2507,22 @@
     "defaultValue": ""
   },
 
-  "literal-matching=MODE": {
+  "literal-matching": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "use",
+      "agg-predicate",
+      "agg"
     ],
     "description": "choose literal matching mode",
-    "defaultValue": "all"
+    "defaultValue": "use"
+  },
+  "literal-matching=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "finite-model-find":{
     "prefix": "--",
@@ -2565,13 +2584,23 @@
     "defaultValue": ""
   },
 
-  "mbqi=MODE": {
+  "mbqi": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "default",
+      "none",
+      "gen-ev",
+      "fmc-interval",
+      "abs"
     ],
     "description": "choose mode for model-based quantifier instantiation",
-    "defaultValue": "all"
+    "defaultValue": "default"
+  },
+  "mbqi=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "mbqi-one-inst-per-round":{
     "prefix": "--",
@@ -2705,13 +2734,23 @@
     "defaultValue": ""
   },
 
-  "fmf-bound-min-mode=MODE": {
+  "fmf-bound-min-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "int",
+      "setc",
+      "all"
     ],
     "description": "mode for which types of bounds to minimize via first decision heuristics",
-    "defaultValue": "all"
+    "defaultValue": "int"
+  },
+
+  "fmf-bound-min-mode=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "quant-cf":{
     "prefix": "--",
@@ -2725,22 +2764,42 @@
     "defaultValue": ""
   },
 
-  "quant-cf-mode=MODE": {
+  "quant-cf-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "prop-eq",
+      "conflict",
+      "partial",
+      "mc"
     ],
     "description": "what effort to apply conflict find mechanism",
-    "defaultValue": "all"
+    "defaultValue": "prop-eq"
   },
-  "quant-cf-when=MODE": {
+  "quant-cf-mode=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "quant-cf-when": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "default",
+      "last-call",
+      "std",
+      "std-h"
     ],
     "description": "when to invoke conflict find mechanism for quantifiers",
-    "defaultValue": "all"
+    "defaultValue": "default"
   },
+
+  "quant-cf-when=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+
   "qcf-tconstraint":{
     "prefix": "--",
     "description": "enable entailment checks for t-constraints in qcf algorithm [*]",
@@ -2933,13 +2992,13 @@
     "defaultValue": ""
   },
 
-  "conjecture-gen-per-round=N": {
-    "type": "string",
+  "conjecture-gen-per-round": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "number of conjectures to generate per instantiation round",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "conjecture-no-filter":{
     "prefix": "--",
@@ -2989,13 +3048,13 @@
     "defaultValue": ""
   },
 
-  "conjecture-gen-gt-enum=N": {
-    "type": "string",
+  "conjecture-gen-gt-enum": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "number of ground terms to generate for model filtering",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "conjecture-gen-uee-intro":{
     "prefix": "--",
@@ -3009,13 +3068,13 @@
     "defaultValue": ""
   },
 
-  "conjecture-gen-max-depth=N": {
-    "type": "string",
+  "conjecture-gen-max-depth": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "maximum depth of terms to consider for conjectures",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "cegqi":{
     "prefix": "--",
@@ -3029,13 +3088,23 @@
     "defaultValue": ""
   },
 
-  "cegqi-si=MODE": {
+  "cegqi-si": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "use",
+      "all-abort",
+      "all"
     ],
     "description": "mode for processing single invocation synthesis conjectures",
-    "defaultValue": "all"
+    "defaultValue": "use"
+  },
+
+  "cegqi-si=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "cegqi-si-partial":{
     "prefix": "--",
@@ -3181,14 +3250,24 @@
     "defaultValue": ""
   },
 
-  "sygus-inv-templ=MODE": {
+  "sygus-inv-templ": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "pre",
+      "post"
     ],
     "description": "template mode for sygus invariant synthesis",
-    "defaultValue": "all"
+    "defaultValue": "none"
   },
+
+  "sygus-inv-templ=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+
   "sygus-auto-unfold":{
     "prefix": "--",
     "description": "enable approach which automatically unfolds transition systems for directly solving invariant synthesis problems [*]",
@@ -3273,13 +3352,22 @@
     "defaultValue": ""
   },
 
-  "cegis-sample=MODE": {
+  "cegis-sample": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "use",
+      "trust"
     ],
     "description": "mode for using samples in the counterexample-guided inductive synthesis loop",
-    "defaultValue": "all"
+    "defaultValue": "none"
+  },
+
+  "cegis-sample=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "sygus-rr":{
     "prefix": "--",
@@ -3317,13 +3405,13 @@
     "defaultValue": ""
   },
 
-  "sygus-samples=N": {
-    "type": "string",
+  "sygus-samples": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "number of points to consider when doing sygus rewriter sample testing",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "sygus-sample-grammar":{
     "prefix": "--",
@@ -3601,13 +3689,21 @@
     "defaultValue": ""
   },
 
-  "cbqi-bv-ineq=MODE": {
+  "cbqi-bv-ineq": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "eq-slack",
+      "eq-boundary",
+      "keep"
     ],
     "description": "choose mode for handling bit-vector inequalities with counterexample-guided instantiation",
-    "defaultValue": "all"
+    "defaultValue": "eq-slack"
+  },
+  "cbqi-bv-ineq=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "cbqi-bv-rm-extract":{
     "prefix": "--",
@@ -3705,21 +3801,37 @@
     "defaultValue": ""
   },
 
-  "macros-quant-mode=MODE": {
+  "macros-quant-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "all",
+      "ground",
+      "ground-uf"
     ],
     "description": "mode for quantifiers macro expansion",
-    "defaultValue": "all"
+    "defaultValue": "ground"
   },
-  "quant-dsplit-mode=MODE": {
+  "macros-quant-mode=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "quant-dsplit-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "none",
+      "default",
+      "agg"
     ],
     "description": "mode for dynamic quantifiers splitting",
-    "defaultValue": "all"
+    "defaultValue": "default"
+  },
+  "quant-dsplit-mode=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "quant-anti-skolem":{
     "prefix": "--",
@@ -3917,17 +4029,49 @@
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "ALL",
+      "AUFLIA",
+      "AUFLIRA",
+      "AUFNIRA",
+      "LIA",
+      "LRA",
+      "QF_ABV",
+      "QF_AUFBV",
+      "QF_AUFLIA",
+      "QF_AX",
+      "QF_BV",
+      "QF_IDL",
+      "QF_LIA",
+      "QF_LRA",
+      "QF_NIA",
+      "QF_NRA",
+      "QF_RDL",
+      "QF_UF",
+      "QF_UFBV",
+      "QF_UFIDL",
+      "QF_UFLIA",
+      "QF_UFLRA",
+      "QF_UFNRA",
+      "UFLRA",
+      "UFNIA"
     ],
     "description": "set the logic, and override all further user attempts to change it (EXPERTS only)",
-    "defaultValue": "all"
+    "defaultValue": "ALL"
   },
-  "simplification=MODE": {
+  "simplification": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "batch",
+      "none"
     ],
     "description": "choose simplification mode, see --simplification=help",
-    "defaultValue": "all"
+    "defaultValue": "batch"
+  },
+  "simplification=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "no-simplification": {
     "type": "int",
@@ -3936,14 +4080,6 @@
     "max": 2147483647,
     "description": "turn off all simplification (same as",
     "defaultValue": "0"
-  },
-  "simplification=none)": {
-    "type": "string",
-    "prefix": "--",
-    "allowedValues": [
-    ],
-    "description": "simplification=none)",
-    "defaultValue": "all"
   },
   "static-learning":{
     "prefix": "--",
@@ -4041,13 +4177,22 @@
     "defaultValue": ""
   },
 
-  "sygus-out=MODE": {
+  "sygus-out": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "status",
+      "status-and-def",
+      "status-or-def",
+      "sygus-standard"
     ],
     "description": "output mode for sygus",
-    "defaultValue": "all"
+    "defaultValue": "status-and-def"
+  },
+  "sygus-out=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "sygus-print-callbacks":{
     "prefix": "--",
@@ -4429,13 +4574,13 @@
     "defaultValue": ""
   },
 
-  "strings-lb=N": {
-    "type": "string",
+  "strings-lb": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "the strategy of LB rule application: 0-lazy, 1-eager, 2-no",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "strings-std-ascii":{
     "prefix": "--",
@@ -4713,22 +4858,36 @@
     "defaultValue": ""
   },
 
-  "theoryof-mode=MODE": {
+  "theoryof-mode": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "type",
+      "term"
     ],
     "description": "mode for Theory::theoryof() (EXPERTS only)",
-    "defaultValue": "all"
+    "defaultValue": "type"
   },
-  "use-theory=NAME": {
+  "theoryof-mode=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+  "use-theory": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "idl"
     ],
     "description": "use alternate theory implementation NAME (--use-theory=help for a list). This option may be repeated or a comma separated list.",
     "defaultValue": "all"
   },
+  "use-theory=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
+  },
+
   "symmetry-breaker":{
     "prefix": "--",
     "description": "use UF symmetry breaker (Deharbe et al., CADE 2011) [*]",
@@ -4789,13 +4948,13 @@
     "defaultValue": ""
   },
 
-  "uf-ss-totality-limited=N": {
-    "type": "string",
+  "uf-ss-totality-limited": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "apply totality axioms, but only up to cardinality N (-1 == do not apply totality axioms, default)",
-    "defaultValue": "all"
+    "defaultValue": "0"
   },
   "uf-ss-totality-sym-break":{
     "prefix": "--",
@@ -4809,13 +4968,13 @@
     "defaultValue": ""
   },
 
-  "uf-ss-abort-card=N": {
-    "type": "string",
+  "uf-ss-abort-card": {
+    "type": "int",
     "prefix": "--",
-    "allowedValues": [
-    ],
+    "min": -2147483648,
+    "max": 2147483647,
     "description": "tells the uf strong solver to only consider models that interpret uninterpreted sorts of cardinality at most N (-1 == no limit, default)",
-    "defaultValue": "all"
+    "defaultValue": "-1"
   },
   "uf-ss-explained-cliques":{
     "prefix": "--",
@@ -4853,13 +5012,21 @@
     "defaultValue": ""
   },
 
-  "uf-ss=MODE": {
+  "uf-ss": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
+      "full",
+      "no-minimal",
+      "none"
     ],
     "description": "mode of operation for uf strong solver.",
-    "defaultValue": "all"
+    "defaultValue": "full"
+  },
+  "uf-ss=help":{
+    "prefix": "--",
+    "description": "",
+    "defaultValue": ""
   },
   "uf-ss-clique-splits":{
     "prefix": "--",
