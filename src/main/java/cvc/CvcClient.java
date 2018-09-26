@@ -67,6 +67,10 @@ public class CvcClient
         RawResults results = new RawResults();
         results.data = builder.toString();
 
+        // preprocessing
+        // remove absolute path information for security reasons
+        String absolutePath = Paths.get(CvcContext.jobsDirectory + "/" + jobId + "/" ).toAbsolutePath().toString();
+        results.data = results.data.replace(absolutePath, "");
         return results;
     }
 

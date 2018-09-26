@@ -4025,7 +4025,7 @@
     "defaultValue": ""
   },
 
-  "force-logic=LOGIC": {
+  "force-logic": {
     "type": "string",
     "prefix": "--",
     "allowedValues": [
