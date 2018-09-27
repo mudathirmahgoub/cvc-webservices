@@ -1,0 +1,13 @@
+% EXPECT: sat
+
+OPTION "produce-models";
+
+x : STRING;
+y : STRING;
+
+ASSERT x = CONCAT( "abc", y );
+ASSERT CHARAT(x,0) = CHARAT(y,2);
+ASSERT LENGTH( y ) >= 3;
+
+CHECKSAT;
+COUNTERMODEL;
