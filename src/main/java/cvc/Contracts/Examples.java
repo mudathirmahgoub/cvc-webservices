@@ -17,12 +17,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
 
 @XmlRootElement(name = "Examples")
 public class Examples
 {
-    @XmlElement(name = "Example")
-    @JsonProperty("names")
-    public String [] names;
+    @XmlElement(name = "Kind")
+    @JsonProperty("kinds")
+    public Kind [] kinds;
 }
+

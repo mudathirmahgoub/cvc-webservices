@@ -22,6 +22,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -72,9 +73,27 @@ public class RESTServices
         {
             File examplesDir = new File(CvcContext.examplesDirectory);
 
+            File [] folders = examplesDir.listFiles(new FileFilter()
+            {
+                @Override
+                public boolean accept(File file)
+                {
+                    return file.getParentFile().getName().equals(examplesDir.getName()) && file.isDirectory();
+                }
+            });
+
+            Kind kinds[] = new Kind[folders.length];
+
+            for (int i = 0; i < folders.length; i++)
+            {
+                kinds[i] = new Kind();
+                kinds[i].name  = folders[i].getName();
+                kinds[i].names = folders[i].list();
+            }
+
             Examples examples = new Examples();
 
-            examples.names = examplesDir.list();
+            examples.kinds = kinds;
 
             return Response.ok().entity(examples).build();
         }
@@ -86,22 +105,23 @@ public class RESTServices
     }
 
     @GET
-    @Path("/examples/{name}")
+    @Path("/examples/{kind}/{example}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response getExample(@PathParam("name") String name)
+    public Response getExample(@PathParam("kind") String kind, @PathParam("example") String example)
     {
         try
         {
-            File exampleDir = new File(new File(CvcContext.examplesDirectory), name);
+            String path = kind + "/" + example;
+            File exampleDir = new File(new File(CvcContext.examplesDirectory), path);
 
             if (! exampleDir.exists())
             {
                 return Response.status(Status.NOT_FOUND)
-                        .entity("could not find example with name: " + name)
+                        .entity("could not find example with example: " + example)
                         .build();
             }
 
-            File codeFile = new File(exampleDir, name + ".smt2");
+            File codeFile = new File(exampleDir, example + ".txt");
 
             Input input = new Input();
 
