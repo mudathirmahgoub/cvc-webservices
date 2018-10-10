@@ -150,18 +150,18 @@
   "tlimit": {
     "type": "int",
     "prefix": "--",
-    "min": 0,
-    "max": 2147483647,
+    "min": 1,
+    "max": 60000,
     "description": "enable time limiting (give milliseconds)",
-    "defaultValue": "0"
+    "defaultValue": "30000"
   },
   "tlimit-per": {
     "type": "int",
     "prefix": "--",
-    "min": 0,
-    "max": 2147483647,
+    "min": 1,
+    "max": 60000,
     "description": "enable time limiting per query (give milliseconds)",
-    "defaultValue": "0"
+    "defaultValue": "30000"
   },
   "rlimit": {
     "type": "int",
