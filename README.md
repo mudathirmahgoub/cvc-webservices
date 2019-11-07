@@ -31,10 +31,10 @@ the dependencies in the pom.xml, build the artifacts, and prepare the web archiv
 4. Deploy ```cvcservices.war``` file to the web container.  
 
 ## Deployment to milner server
- Milner server uses Apache Tomcat web container ```http://cvc.cs.uiowa.edu:8080```
+ Milner server uses Apache Tomcat web container ```https://cvc.cs.uiowa.edu```
  
  To deploy the ```cvcservices.war``` file you can use Tomcat Web Application Manager
- ```http://cvc.cs.uiowa.edu:8080/manager/html``` to upload the file. 
+ ```https://cvc.cs.uiowa.edu/manager/html``` to upload the file. 
  Please note the old deployment ```/cvcservices``` needs to be undeployed first 
  before any new deployment.
  
