@@ -1,7 +1,7 @@
 {
 	"cvcPath": "",
 	"jobsDirectory": "cvc_jobs",
-	"cvcCommand": "/usr/local/bin/cvc4 {0}/{1}",
+	"cvcCommand": "/usr/bin/runlim -o {0}/log.txt --real-time-limit=90 --time-limit=90 --space-limit=50 /usr/local/bin/cvc4 {0}/{1}",
 	"maxThreads": "24",
 	"softTimeout": "60000",
 	"hardTimeout": "90000"
