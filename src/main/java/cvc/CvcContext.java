@@ -1,5 +1,5 @@
 package cvc;
-/* This file is part of the cvc2-webservices.
+/* This file is part of the cvc-webservices.
  *  Copyright (c) 2018 by the Board of Trustees of the University of Iowa
  *  Licensed under the Apache License, Version 2.0 (the "License"); you
  *  may not use this file except in compliance with the License.  You
